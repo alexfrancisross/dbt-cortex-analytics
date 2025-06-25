@@ -1,0 +1,8 @@
+streamlit>=1.33
+snowflake-connector-python
+pandas
+numpy
+plotly>=5
+altair>=5
+seaborn
+streamlit-extras

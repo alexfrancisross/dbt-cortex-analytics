@@ -1,0 +1,97 @@
+# Quick push script (local development tool)
+quick_push.sh
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# Virtual environments
+venv/
+env/
+ENV/
+.venv/
+.env/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Logs
+*.log
+logs/
+
+# Environment variables
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# DBT specific
+dbt/target/
+dbt/logs/
+dbt/dbt_packages/
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# Snowflake
+*.sql.bak
+
+# Streamlit secrets and configuration
+.streamlit/secrets.toml
+streamlit/src/.streamlit/secrets.toml
+**/secrets.toml
+**/config.toml
+
+# SSH keys and private keys
+*.p8
+*.pem
+*.key
+*.p12
+*.pfx
+pat_token.txt
+pat_token.*
+
+# Database credentials and connection files
+profiles.yml
+~/.dbt/profiles.yml
+~/.snowflake/config.toml
+.snowflake/config.toml
+
+# API keys and tokens
+*_token.txt
+*_token.*
+api_key.txt
+api_key.* 

@@ -1,0 +1,12 @@
+Metadata-Version: 2.2
+Name: customer_analytics
+Version: 0.1.0
+Requires-Dist: streamlit>=1.33
+Requires-Dist: snowflake-connector-python
+Requires-Dist: pandas
+Requires-Dist: numpy
+Requires-Dist: plotly>=5
+Requires-Dist: altair>=5
+Requires-Dist: seaborn
+Requires-Dist: streamlit-extras
+Dynamic: requires-dist

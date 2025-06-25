@@ -1,0 +1,1441 @@
+[0m10:49:56.242022 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1073a3810>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x107434f50>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x107435d10>]}
+
+
+============================== 10:49:56.245333 | aa6d004a-2702-4744-b107-c40f85b01008 ==============================
+[0m10:49:56.245333 [info ] [MainThread]: Running with dbt=1.10.1
+[0m10:49:56.245733 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'version_check': 'True', 'debug': 'False', 'log_path': '/Users/axross/Snowflake/QuickStarts/dbt_cortex_analytics/dbt/logs', 'profiles_dir': '/Users/axross/.dbt', 'fail_fast': 'False', 'use_colors': 'True', 'use_experimental_parser': 'False', 'empty': 'False', 'quiet': 'False', 'no_print': 'None', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'invocation_command': 'dbt run', 'static_parser': 'True', 'log_format': 'default', 'target_path': 'None', 'introspect': 'True', 'send_anonymous_usage_stats': 'True'}
+[0m10:49:57.509640 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': 'aa6d004a-2702-4744-b107-c40f85b01008', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1073f5c10>]}
+[0m10:49:57.543076 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': 'aa6d004a-2702-4744-b107-c40f85b01008', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x117f6bcd0>]}
+[0m10:49:57.544127 [info ] [MainThread]: Registered adapter: snowflake=1.9.4
+[0m10:49:57.661046 [debug] [MainThread]: checksum: 2c026f85d539c10c69b093157526ce33d0bf5533489eafb07fe5172434ec7740, vars: {}, profile: , target: , version: 1.10.1
+[0m10:49:57.661944 [info ] [MainThread]: Unable to do partial parsing because saved manifest not found. Starting full parse.
+[0m10:49:57.662275 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'partial_parser', 'label': 'aa6d004a-2702-4744-b107-c40f85b01008', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1072893d0>]}
+[0m10:49:58.491823 [warn ] [MainThread]: [[33mWARNING[0m]: Configuration paths exist in your dbt_project.yml file which do not apply to any resources.
+There are 1 unused configuration paths:
+- models.dbt_cortex.semantic
+[0m10:49:58.497911 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': 'aa6d004a-2702-4744-b107-c40f85b01008', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x123cdc950>]}
+[0m10:49:58.555768 [debug] [MainThread]: Wrote artifact WritableManifest to /Users/axross/Snowflake/QuickStarts/dbt_cortex_analytics/dbt/target/manifest.json
+[0m10:49:58.557883 [debug] [MainThread]: Wrote artifact SemanticManifest to /Users/axross/Snowflake/QuickStarts/dbt_cortex_analytics/dbt/target/semantic_manifest.json
+[0m10:49:58.578105 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': 'aa6d004a-2702-4744-b107-c40f85b01008', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x123a9c7d0>]}
+[0m10:49:58.578495 [info ] [MainThread]: Found 12 models, 58 data tests, 4 sources, 477 macros
+[0m10:49:58.578716 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'aa6d004a-2702-4744-b107-c40f85b01008', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x123bf0cd0>]}
+[0m10:49:58.580499 [info ] [MainThread]: 
+[0m10:49:58.580765 [info ] [MainThread]: Concurrency: 4 threads (target='dev')
+[0m10:49:58.580955 [info ] [MainThread]: 
+[0m10:49:58.581278 [debug] [MainThread]: Acquiring new snowflake connection 'master'
+[0m10:49:58.584473 [debug] [ThreadPool]: Acquiring new snowflake connection 'list_DBT_CORTEX_LLMS'
+[0m10:49:58.584901 [debug] [ThreadPool]: Acquiring new snowflake connection 'list_DBT_CORTEX_LLMS'
+[0m10:49:58.658599 [debug] [ThreadPool]: Using snowflake connection "list_DBT_CORTEX_LLMS"
+[0m10:49:58.658953 [debug] [ThreadPool]: Using snowflake connection "list_DBT_CORTEX_LLMS"
+[0m10:49:58.659214 [debug] [ThreadPool]: On list_DBT_CORTEX_LLMS: /* {"app": "dbt", "dbt_version": "1.10.1", "profile_name": "dbt_cortex", "target_name": "dev", "connection_name": "list_DBT_CORTEX_LLMS"} */
+show terse schemas in database DBT_CORTEX_LLMS
+    limit 10000
+[0m10:49:58.659413 [debug] [ThreadPool]: On list_DBT_CORTEX_LLMS: /* {"app": "dbt", "dbt_version": "1.10.1", "profile_name": "dbt_cortex", "target_name": "dev", "connection_name": "list_DBT_CORTEX_LLMS"} */
+show terse schemas in database DBT_CORTEX_LLMS
+    limit 10000
+[0m10:49:58.659601 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m10:49:58.659766 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m10:49:59.032748 [debug] [ThreadPool]: Snowflake adapter: Error running SQL: /* {"app": "dbt", "dbt_version": "1.10.1", "profile_name": "dbt_cortex", "target_name": "dev", "connection_name": "list_DBT_CORTEX_LLMS"} */
+show terse schemas in database DBT_CORTEX_LLMS
+    limit 10000
+[0m10:49:59.033315 [debug] [ThreadPool]: Snowflake adapter: Error running SQL: /* {"app": "dbt", "dbt_version": "1.10.1", "profile_name": "dbt_cortex", "target_name": "dev", "connection_name": "list_DBT_CORTEX_LLMS"} */
+show terse schemas in database DBT_CORTEX_LLMS
+    limit 10000
+[0m10:49:59.033613 [debug] [ThreadPool]: Snowflake adapter: Rolling back transaction.
+[0m10:49:59.033960 [debug] [ThreadPool]: Snowflake adapter: Rolling back transaction.
+[0m10:49:59.034299 [debug] [ThreadPool]: Snowflake adapter: Error running SQL: macro list_schemas
+[0m10:49:59.034601 [debug] [ThreadPool]: Snowflake adapter: Error running SQL: macro list_schemas
+[0m10:49:59.034844 [debug] [ThreadPool]: Snowflake adapter: Rolling back transaction.
+[0m10:49:59.035114 [debug] [ThreadPool]: Snowflake adapter: Rolling back transaction.
+[0m10:49:59.035929 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m10:49:59.036223 [debug] [MainThread]: Connection 'list_DBT_CORTEX_LLMS' was left open.
+[0m10:49:59.036440 [debug] [MainThread]: On list_DBT_CORTEX_LLMS: No close available on handle
+[0m10:49:59.036619 [debug] [MainThread]: Connection 'list_DBT_CORTEX_LLMS' was left open.
+[0m10:49:59.036797 [debug] [MainThread]: On list_DBT_CORTEX_LLMS: No close available on handle
+[0m10:49:59.036990 [info ] [MainThread]: 
+[0m10:49:59.037212 [info ] [MainThread]: Finished running  in 0 hours 0 minutes and 0.46 seconds (0.46s).
+[0m10:49:59.037544 [error] [MainThread]: Encountered an error:
+Runtime Error
+  Database error while listing schemas in database "DBT_CORTEX_LLMS"
+  Database Error
+    250001 (08001): Failed to connect to DB: sfseeurope-demo-aross.snowflakecomputing.com:443. Incorrect username or password was specified.
+[0m10:49:59.203168 [debug] [MainThread]: Resource report: {"command_name": "run", "command_success": false, "command_wall_clock_time": 3.0193691, "process_in_blocks": "0", "process_kernel_time": 0.587013, "process_mem_max_rss": "223019008", "process_out_blocks": "0", "process_user_time": 2.357686}
+[0m10:49:59.203567 [debug] [MainThread]: Command `dbt run` failed at 10:49:59.203507 after 3.02 seconds
+[0m10:49:59.203809 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x107435b10>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x102afbbd0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x123eba990>]}
+[0m10:49:59.204285 [debug] [MainThread]: Flushing usage events
+[0m10:49:59.550960 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m10:50:09.022176 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x110ca3e50>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x110cab890>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x110d25bd0>]}
+
+
+============================== 10:50:09.025614 | 30b42244-36ca-4c6d-9f77-d3214282eba3 ==============================
+[0m10:50:09.025614 [info ] [MainThread]: Running with dbt=1.10.1
+[0m10:50:09.026152 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': '/Users/axross/.dbt', 'version_check': 'True', 'debug': 'False', 'log_path': '/Users/axross/Snowflake/QuickStarts/dbt_cortex_analytics/dbt/logs', 'fail_fast': 'False', 'warn_error': 'None', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'empty': 'None', 'log_format': 'default', 'invocation_command': 'dbt debug', 'introspect': 'True', 'static_parser': 'True', 'target_path': 'None', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'send_anonymous_usage_stats': 'True'}
+[0m10:50:09.037020 [info ] [MainThread]: dbt version: 1.10.1
+[0m10:50:09.037367 [info ] [MainThread]: python version: 3.11.11
+[0m10:50:09.037883 [info ] [MainThread]: python path: /opt/miniconda3/envs/py311/bin/python
+[0m10:50:09.038143 [info ] [MainThread]: os info: macOS-15.5-arm64-arm-64bit
+[0m10:50:09.838156 [info ] [MainThread]: Using profiles dir at /Users/axross/.dbt
+[0m10:50:09.838556 [info ] [MainThread]: Using profiles.yml file at /Users/axross/.dbt/profiles.yml
+[0m10:50:09.838740 [info ] [MainThread]: Using dbt_project.yml file at /Users/axross/Snowflake/QuickStarts/dbt_cortex_analytics/dbt/dbt_project.yml
+[0m10:50:09.839399 [info ] [MainThread]: adapter type: snowflake
+[0m10:50:09.839726 [info ] [MainThread]: adapter version: 1.9.4
+[0m10:50:09.894406 [info ] [MainThread]: Configuration:
+[0m10:50:09.894807 [info ] [MainThread]:   profiles.yml file [[32mOK found and valid[0m]
+[0m10:50:09.894986 [info ] [MainThread]:   dbt_project.yml file [[32mOK found and valid[0m]
+[0m10:50:09.895141 [info ] [MainThread]: Required dependencies:
+[0m10:50:09.895514 [debug] [MainThread]: Executing "git --help"
+[0m10:50:09.929304 [debug] [MainThread]: STDOUT: "b"usage: git [-v | --version] [-h | --help] [-C <path>] [-c <name>=<value>]\n           [--exec-path[=<path>]] [--html-path] [--man-path] [--info-path]\n           [-p | --paginate | -P | --no-pager] [--no-replace-objects] [--bare]\n           [--git-dir=<path>] [--work-tree=<path>] [--namespace=<name>]\n           [--super-prefix=<path>] [--config-env=<name>=<envvar>]\n           <command> [<args>]\n\nThese are common Git commands used in various situations:\n\nstart a working area (see also: git help tutorial)\n   clone     Clone a repository into a new directory\n   init      Create an empty Git repository or reinitialize an existing one\n\nwork on the current change (see also: git help everyday)\n   add       Add file contents to the index\n   mv        Move or rename a file, a directory, or a symlink\n   restore   Restore working tree files\n   rm        Remove files from the working tree and from the index\n\nexamine the history and state (see also: git help revisions)\n   bisect    Use binary search to find the commit that introduced a bug\n   diff      Show changes between commits, commit and working tree, etc\n   grep      Print lines matching a pattern\n   log       Show commit logs\n   show      Show various types of objects\n   status    Show the working tree status\n\ngrow, mark and tweak your common history\n   branch    List, create, or delete branches\n   commit    Record changes to the repository\n   merge     Join two or more development histories together\n   rebase    Reapply commits on top of another base tip\n   reset     Reset current HEAD to the specified state\n   switch    Switch branches\n   tag       Create, list, delete or verify a tag object signed with GPG\n\ncollaborate (see also: git help workflows)\n   fetch     Download objects and refs from another repository\n   pull      Fetch from and integrate with another repository or a local branch\n   push      Update remote refs along with associated objects\n\n'git help -a' and 'git help -g' list available subcommands and some\nconcept guides. See 'git help <command>' or 'git help <concept>'\nto read about a specific subcommand or concept.\nSee 'git help git' for an overview of the system.\n""
+[0m10:50:09.930334 [debug] [MainThread]: STDERR: "b''"
+[0m10:50:09.930579 [info ] [MainThread]:  - git [[32mOK found[0m]
+
+[0m10:50:09.930797 [info ] [MainThread]: Connection:
+[0m10:50:09.931029 [info ] [MainThread]:   account: sfseeurope-demo-aross
+[0m10:50:09.931180 [info ] [MainThread]:   user: SERVICE
+[0m10:50:09.931330 [info ] [MainThread]:   database: RETAIL_ANALYTICS
+[0m10:50:09.931475 [info ] [MainThread]:   warehouse: CORTEX_WH
+[0m10:50:09.931619 [info ] [MainThread]:   role: ACCOUNTADMIN
+[0m10:50:09.931764 [info ] [MainThread]:   schema: RAW
+[0m10:50:09.931905 [info ] [MainThread]:   authenticator: None
+[0m10:50:09.932049 [info ] [MainThread]:   oauth_client_id: None
+[0m10:50:09.932194 [info ] [MainThread]:   query_tag: dbt
+[0m10:50:09.932337 [info ] [MainThread]:   client_session_keep_alive: False
+[0m10:50:09.932483 [info ] [MainThread]:   host: None
+[0m10:50:09.932620 [info ] [MainThread]:   port: None
+[0m10:50:09.932760 [info ] [MainThread]:   proxy_host: None
+[0m10:50:09.932899 [info ] [MainThread]:   proxy_port: None
+[0m10:50:09.933035 [info ] [MainThread]:   protocol: None
+[0m10:50:09.933172 [info ] [MainThread]:   connect_retries: 1
+[0m10:50:09.933306 [info ] [MainThread]:   connect_timeout: None
+[0m10:50:09.933443 [info ] [MainThread]:   retry_on_database_errors: False
+[0m10:50:09.933576 [info ] [MainThread]:   retry_all: False
+[0m10:50:09.933709 [info ] [MainThread]:   insecure_mode: False
+[0m10:50:09.933844 [info ] [MainThread]:   reuse_connections: True
+[0m10:50:09.934197 [info ] [MainThread]: Registered adapter: snowflake=1.9.4
+[0m10:50:10.018426 [debug] [MainThread]: Acquiring new snowflake connection 'debug'
+[0m10:50:10.070778 [debug] [MainThread]: Using snowflake connection "debug"
+[0m10:50:10.071104 [debug] [MainThread]: On debug: select 1 as id
+[0m10:50:10.071488 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m10:50:10.392607 [debug] [MainThread]: Snowflake adapter: Error running SQL: select 1 as id
+[0m10:50:10.392935 [debug] [MainThread]: Snowflake adapter: Rolling back transaction.
+[0m10:50:10.393195 [info ] [MainThread]:   Connection test: [[31mERROR[0m]
+
+[0m10:50:10.393420 [info ] [MainThread]: [31m1 check failed:[0m
+[0m10:50:10.393775 [info ] [MainThread]: dbt was unable to connect to the specified database.
+The database returned the following error:
+
+  >Database Error
+  250001 (08001): Failed to connect to DB: sfseeurope-demo-aross.snowflakecomputing.com:443. Incorrect username or password was specified.
+
+Check your database credentials and try again. For more information, visit:
+https://docs.getdbt.com/docs/configure-your-profile
+
+
+[0m10:50:10.398440 [debug] [MainThread]: Resource report: {"command_name": "debug", "command_success": false, "command_wall_clock_time": 1.4327832, "process_in_blocks": "0", "process_kernel_time": 0.449669, "process_mem_max_rss": "213434368", "process_out_blocks": "0", "process_user_time": 1.389142}
+[0m10:50:10.398894 [debug] [MainThread]: Command `dbt debug` failed at 10:50:10.398813 after 1.43 seconds
+[0m10:50:10.399178 [debug] [MainThread]: Connection 'debug' was left open.
+[0m10:50:10.399584 [debug] [MainThread]: On debug: No close available on handle
+[0m10:50:10.399922 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x110d18350>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x110d138d0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x121446a10>]}
+[0m10:50:10.400259 [debug] [MainThread]: Flushing usage events
+[0m10:50:10.734869 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m10:51:21.357773 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1073a3d10>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x107524d50>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x107525890>]}
+
+
+============================== 10:51:21.361074 | 5c8d99f7-b933-4317-aefa-404dc950124d ==============================
+[0m10:51:21.361074 [info ] [MainThread]: Running with dbt=1.10.1
+[0m10:51:21.361477 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': '/Users/axross/.dbt', 'fail_fast': 'False', 'debug': 'False', 'log_path': '/Users/axross/Snowflake/QuickStarts/dbt_cortex_analytics/dbt/logs', 'version_check': 'True', 'warn_error': 'None', 'use_colors': 'True', 'use_experimental_parser': 'False', 'empty': 'None', 'quiet': 'False', 'no_print': 'None', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'static_parser': 'True', 'log_format': 'default', 'introspect': 'True', 'target_path': 'None', 'invocation_command': 'dbt debug', 'send_anonymous_usage_stats': 'True'}
+[0m10:51:21.375397 [info ] [MainThread]: dbt version: 1.10.1
+[0m10:51:21.375751 [info ] [MainThread]: python version: 3.11.11
+[0m10:51:21.375963 [info ] [MainThread]: python path: /opt/miniconda3/envs/py311/bin/python
+[0m10:51:21.376146 [info ] [MainThread]: os info: macOS-15.5-arm64-arm-64bit
+[0m10:51:22.262199 [info ] [MainThread]: Using profiles dir at /Users/axross/.dbt
+[0m10:51:22.262616 [info ] [MainThread]: Using profiles.yml file at /Users/axross/.dbt/profiles.yml
+[0m10:51:22.263023 [info ] [MainThread]: Using dbt_project.yml file at /Users/axross/Snowflake/QuickStarts/dbt_cortex_analytics/dbt/dbt_project.yml
+[0m10:51:22.263737 [info ] [MainThread]: adapter type: snowflake
+[0m10:51:22.264005 [info ] [MainThread]: adapter version: 1.9.4
+[0m10:51:22.319351 [info ] [MainThread]: Configuration:
+[0m10:51:22.319699 [info ] [MainThread]:   profiles.yml file [[32mOK found and valid[0m]
+[0m10:51:22.319884 [info ] [MainThread]:   dbt_project.yml file [[32mOK found and valid[0m]
+[0m10:51:22.320049 [info ] [MainThread]: Required dependencies:
+[0m10:51:22.320489 [debug] [MainThread]: Executing "git --help"
+[0m10:51:22.356194 [debug] [MainThread]: STDOUT: "b"usage: git [-v | --version] [-h | --help] [-C <path>] [-c <name>=<value>]\n           [--exec-path[=<path>]] [--html-path] [--man-path] [--info-path]\n           [-p | --paginate | -P | --no-pager] [--no-replace-objects] [--bare]\n           [--git-dir=<path>] [--work-tree=<path>] [--namespace=<name>]\n           [--super-prefix=<path>] [--config-env=<name>=<envvar>]\n           <command> [<args>]\n\nThese are common Git commands used in various situations:\n\nstart a working area (see also: git help tutorial)\n   clone     Clone a repository into a new directory\n   init      Create an empty Git repository or reinitialize an existing one\n\nwork on the current change (see also: git help everyday)\n   add       Add file contents to the index\n   mv        Move or rename a file, a directory, or a symlink\n   restore   Restore working tree files\n   rm        Remove files from the working tree and from the index\n\nexamine the history and state (see also: git help revisions)\n   bisect    Use binary search to find the commit that introduced a bug\n   diff      Show changes between commits, commit and working tree, etc\n   grep      Print lines matching a pattern\n   log       Show commit logs\n   show      Show various types of objects\n   status    Show the working tree status\n\ngrow, mark and tweak your common history\n   branch    List, create, or delete branches\n   commit    Record changes to the repository\n   merge     Join two or more development histories together\n   rebase    Reapply commits on top of another base tip\n   reset     Reset current HEAD to the specified state\n   switch    Switch branches\n   tag       Create, list, delete or verify a tag object signed with GPG\n\ncollaborate (see also: git help workflows)\n   fetch     Download objects and refs from another repository\n   pull      Fetch from and integrate with another repository or a local branch\n   push      Update remote refs along with associated objects\n\n'git help -a' and 'git help -g' list available subcommands and some\nconcept guides. See 'git help <command>' or 'git help <concept>'\nto read about a specific subcommand or concept.\nSee 'git help git' for an overview of the system.\n""
+[0m10:51:22.357059 [debug] [MainThread]: STDERR: "b''"
+[0m10:51:22.357327 [info ] [MainThread]:  - git [[32mOK found[0m]
+
+[0m10:51:22.357546 [info ] [MainThread]: Connection:
+[0m10:51:22.357769 [info ] [MainThread]:   account: sfseeurope-demo-aross
+[0m10:51:22.357929 [info ] [MainThread]:   user: SERVICE
+[0m10:51:22.358089 [info ] [MainThread]:   database: DBT_CORTEX_LLMS
+[0m10:51:22.358249 [info ] [MainThread]:   warehouse: CORTEX_WH
+[0m10:51:22.358402 [info ] [MainThread]:   role: ACCOUNTADMIN
+[0m10:51:22.358556 [info ] [MainThread]:   schema: STAGE
+[0m10:51:22.358704 [info ] [MainThread]:   authenticator: None
+[0m10:51:22.358857 [info ] [MainThread]:   oauth_client_id: None
+[0m10:51:22.359001 [info ] [MainThread]:   query_tag: dbt
+[0m10:51:22.359145 [info ] [MainThread]:   client_session_keep_alive: False
+[0m10:51:22.359296 [info ] [MainThread]:   host: None
+[0m10:51:22.359443 [info ] [MainThread]:   port: None
+[0m10:51:22.359595 [info ] [MainThread]:   proxy_host: None
+[0m10:51:22.359749 [info ] [MainThread]:   proxy_port: None
+[0m10:51:22.359891 [info ] [MainThread]:   protocol: None
+[0m10:51:22.360035 [info ] [MainThread]:   connect_retries: 1
+[0m10:51:22.360173 [info ] [MainThread]:   connect_timeout: None
+[0m10:51:22.360315 [info ] [MainThread]:   retry_on_database_errors: False
+[0m10:51:22.360459 [info ] [MainThread]:   retry_all: False
+[0m10:51:22.360597 [info ] [MainThread]:   insecure_mode: False
+[0m10:51:22.360741 [info ] [MainThread]:   reuse_connections: True
+[0m10:51:22.361122 [info ] [MainThread]: Registered adapter: snowflake=1.9.4
+[0m10:51:22.448506 [debug] [MainThread]: Acquiring new snowflake connection 'debug'
+[0m10:51:22.502227 [debug] [MainThread]: Using snowflake connection "debug"
+[0m10:51:22.502541 [debug] [MainThread]: On debug: select 1 as id
+[0m10:51:22.502714 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m10:51:22.922225 [debug] [MainThread]: Snowflake adapter: Error running SQL: select 1 as id
+[0m10:51:22.922531 [debug] [MainThread]: Snowflake adapter: Rolling back transaction.
+[0m10:51:22.922790 [info ] [MainThread]:   Connection test: [[31mERROR[0m]
+
+[0m10:51:22.923011 [info ] [MainThread]: [31m1 check failed:[0m
+[0m10:51:22.923194 [info ] [MainThread]: dbt was unable to connect to the specified database.
+The database returned the following error:
+
+  >Database Error
+  250001 (08001): Failed to connect to DB: sfseeurope-demo-aross.snowflakecomputing.com:443. Incorrect username or password was specified.
+
+Check your database credentials and try again. For more information, visit:
+https://docs.getdbt.com/docs/configure-your-profile
+
+
+[0m10:51:22.934837 [debug] [MainThread]: Resource report: {"command_name": "debug", "command_success": false, "command_wall_clock_time": 1.6308551, "process_in_blocks": "0", "process_kernel_time": 0.518901, "process_mem_max_rss": "211484672", "process_out_blocks": "0", "process_user_time": 1.436139}
+[0m10:51:22.935237 [debug] [MainThread]: Command `dbt debug` failed at 10:51:22.935170 after 1.63 seconds
+[0m10:51:22.935492 [debug] [MainThread]: Connection 'debug' was left open.
+[0m10:51:22.935666 [debug] [MainThread]: On debug: No close available on handle
+[0m10:51:22.935870 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x102e13bd0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x104886d90>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x107553950>]}
+[0m10:51:22.936134 [debug] [MainThread]: Flushing usage events
+[0m10:51:23.295156 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m10:52:56.587678 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1118c8110>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x111c24cd0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x111c25810>]}
+
+
+============================== 10:52:56.591876 | 8856c2d2-5be4-474a-b2d9-5fc684989861 ==============================
+[0m10:52:56.591876 [info ] [MainThread]: Running with dbt=1.10.1
+[0m10:52:56.592281 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': '/Users/axross/.dbt', 'fail_fast': 'False', 'debug': 'False', 'log_path': '/Users/axross/Snowflake/QuickStarts/dbt_cortex_analytics/dbt/logs', 'warn_error': 'None', 'version_check': 'True', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'empty': 'None', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'introspect': 'True', 'invocation_command': 'dbt debug', 'static_parser': 'True', 'target_path': 'None', 'log_format': 'default', 'send_anonymous_usage_stats': 'True'}
+[0m10:52:56.606724 [info ] [MainThread]: dbt version: 1.10.1
+[0m10:52:56.607127 [info ] [MainThread]: python version: 3.11.11
+[0m10:52:56.607495 [info ] [MainThread]: python path: /opt/miniconda3/envs/py311/bin/python
+[0m10:52:56.607754 [info ] [MainThread]: os info: macOS-15.5-arm64-arm-64bit
+[0m10:52:57.493484 [info ] [MainThread]: Using profiles dir at /Users/axross/.dbt
+[0m10:52:57.493894 [info ] [MainThread]: Using profiles.yml file at /Users/axross/.dbt/profiles.yml
+[0m10:52:57.494087 [info ] [MainThread]: Using dbt_project.yml file at /Users/axross/Snowflake/QuickStarts/dbt_cortex_analytics/dbt/dbt_project.yml
+[0m10:52:57.494720 [info ] [MainThread]: adapter type: snowflake
+[0m10:52:57.495055 [info ] [MainThread]: adapter version: 1.9.4
+[0m10:52:57.552210 [info ] [MainThread]: Configuration:
+[0m10:52:57.552595 [info ] [MainThread]:   profiles.yml file [[32mOK found and valid[0m]
+[0m10:52:57.552780 [info ] [MainThread]:   dbt_project.yml file [[32mOK found and valid[0m]
+[0m10:52:57.552938 [info ] [MainThread]: Required dependencies:
+[0m10:52:57.553393 [debug] [MainThread]: Executing "git --help"
+[0m10:52:57.593067 [debug] [MainThread]: STDOUT: "b"usage: git [-v | --version] [-h | --help] [-C <path>] [-c <name>=<value>]\n           [--exec-path[=<path>]] [--html-path] [--man-path] [--info-path]\n           [-p | --paginate | -P | --no-pager] [--no-replace-objects] [--bare]\n           [--git-dir=<path>] [--work-tree=<path>] [--namespace=<name>]\n           [--super-prefix=<path>] [--config-env=<name>=<envvar>]\n           <command> [<args>]\n\nThese are common Git commands used in various situations:\n\nstart a working area (see also: git help tutorial)\n   clone     Clone a repository into a new directory\n   init      Create an empty Git repository or reinitialize an existing one\n\nwork on the current change (see also: git help everyday)\n   add       Add file contents to the index\n   mv        Move or rename a file, a directory, or a symlink\n   restore   Restore working tree files\n   rm        Remove files from the working tree and from the index\n\nexamine the history and state (see also: git help revisions)\n   bisect    Use binary search to find the commit that introduced a bug\n   diff      Show changes between commits, commit and working tree, etc\n   grep      Print lines matching a pattern\n   log       Show commit logs\n   show      Show various types of objects\n   status    Show the working tree status\n\ngrow, mark and tweak your common history\n   branch    List, create, or delete branches\n   commit    Record changes to the repository\n   merge     Join two or more development histories together\n   rebase    Reapply commits on top of another base tip\n   reset     Reset current HEAD to the specified state\n   switch    Switch branches\n   tag       Create, list, delete or verify a tag object signed with GPG\n\ncollaborate (see also: git help workflows)\n   fetch     Download objects and refs from another repository\n   pull      Fetch from and integrate with another repository or a local branch\n   push      Update remote refs along with associated objects\n\n'git help -a' and 'git help -g' list available subcommands and some\nconcept guides. See 'git help <command>' or 'git help <concept>'\nto read about a specific subcommand or concept.\nSee 'git help git' for an overview of the system.\n""
+[0m10:52:57.593830 [debug] [MainThread]: STDERR: "b''"
+[0m10:52:57.594061 [info ] [MainThread]:  - git [[32mOK found[0m]
+
+[0m10:52:57.594284 [info ] [MainThread]: Connection:
+[0m10:52:57.594507 [info ] [MainThread]:   account: sfseeurope-demo-aross
+[0m10:52:57.594658 [info ] [MainThread]:   user: SERVICE
+[0m10:52:57.594805 [info ] [MainThread]:   database: DBT_CORTEX_LLMS
+[0m10:52:57.594950 [info ] [MainThread]:   warehouse: CORTEX_WH
+[0m10:52:57.595093 [info ] [MainThread]:   role: ACCOUNTADMIN
+[0m10:52:57.595472 [info ] [MainThread]:   schema: STAGE
+[0m10:52:57.595708 [info ] [MainThread]:   authenticator: JWT
+[0m10:52:57.595889 [info ] [MainThread]:   oauth_client_id: None
+[0m10:52:57.596078 [info ] [MainThread]:   query_tag: dbt
+[0m10:52:57.596248 [info ] [MainThread]:   client_session_keep_alive: False
+[0m10:52:57.596406 [info ] [MainThread]:   host: None
+[0m10:52:57.596551 [info ] [MainThread]:   port: None
+[0m10:52:57.596701 [info ] [MainThread]:   proxy_host: None
+[0m10:52:57.596853 [info ] [MainThread]:   proxy_port: None
+[0m10:52:57.596995 [info ] [MainThread]:   protocol: None
+[0m10:52:57.597139 [info ] [MainThread]:   connect_retries: 1
+[0m10:52:57.597279 [info ] [MainThread]:   connect_timeout: None
+[0m10:52:57.597417 [info ] [MainThread]:   retry_on_database_errors: False
+[0m10:52:57.597559 [info ] [MainThread]:   retry_all: False
+[0m10:52:57.597695 [info ] [MainThread]:   insecure_mode: False
+[0m10:52:57.597834 [info ] [MainThread]:   reuse_connections: True
+[0m10:52:57.598235 [info ] [MainThread]: Registered adapter: snowflake=1.9.4
+[0m10:52:57.682930 [debug] [MainThread]: Acquiring new snowflake connection 'debug'
+[0m10:52:57.740671 [debug] [MainThread]: Using snowflake connection "debug"
+[0m10:52:57.740987 [debug] [MainThread]: On debug: select 1 as id
+[0m10:52:57.741178 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m10:52:58.195204 [debug] [MainThread]: SQL status: SUCCESS 1 in 0.454 seconds
+[0m10:52:58.196233 [info ] [MainThread]:   Connection test: [[32mOK connection ok[0m]
+
+[0m10:52:58.196625 [info ] [MainThread]: [32mAll checks passed![0m
+[0m10:52:58.201963 [debug] [MainThread]: Resource report: {"command_name": "debug", "command_success": true, "command_wall_clock_time": 1.6771253, "process_in_blocks": "0", "process_kernel_time": 0.503812, "process_mem_max_rss": "209649664", "process_out_blocks": "0", "process_user_time": 1.577908}
+[0m10:52:58.202385 [debug] [MainThread]: Command `dbt debug` succeeded at 10:52:58.202302 after 1.68 seconds
+[0m10:52:58.202622 [debug] [MainThread]: Connection 'debug' was left open.
+[0m10:52:58.202796 [debug] [MainThread]: On debug: Close
+[0m10:52:58.253880 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10398fbd0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x111c25510>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x121f02bd0>]}
+[0m10:52:58.254404 [debug] [MainThread]: Flushing usage events
+[0m10:52:58.603578 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m10:53:08.911248 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x111fbba90>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x112215190>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x112221b90>]}
+
+
+============================== 10:53:08.914948 | f434e7af-c500-4dc2-8905-8c7f688c638c ==============================
+[0m10:53:08.914948 [info ] [MainThread]: Running with dbt=1.10.1
+[0m10:53:08.915365 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': '/Users/axross/.dbt', 'debug': 'False', 'fail_fast': 'False', 'log_path': '/Users/axross/Snowflake/QuickStarts/dbt_cortex_analytics/dbt/logs', 'version_check': 'True', 'warn_error': 'None', 'use_colors': 'True', 'use_experimental_parser': 'False', 'empty': 'False', 'quiet': 'False', 'no_print': 'None', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'invocation_command': 'dbt run', 'log_format': 'default', 'introspect': 'True', 'target_path': 'None', 'static_parser': 'True', 'send_anonymous_usage_stats': 'True'}
+[0m10:53:09.889678 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': 'f434e7af-c500-4dc2-8905-8c7f688c638c', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x123c11f10>]}
+[0m10:53:09.922916 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': 'f434e7af-c500-4dc2-8905-8c7f688c638c', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x123a6bd50>]}
+[0m10:53:09.923977 [info ] [MainThread]: Registered adapter: snowflake=1.9.4
+[0m10:53:10.014540 [debug] [MainThread]: checksum: 2c026f85d539c10c69b093157526ce33d0bf5533489eafb07fe5172434ec7740, vars: {}, profile: , target: , version: 1.10.1
+[0m10:53:10.076851 [info ] [MainThread]: Unable to do partial parsing because profile has changed
+[0m10:53:10.077316 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'partial_parser', 'label': 'f434e7af-c500-4dc2-8905-8c7f688c638c', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x111144e10>]}
+[0m10:53:10.883838 [warn ] [MainThread]: [[33mWARNING[0m]: Configuration paths exist in your dbt_project.yml file which do not apply to any resources.
+There are 1 unused configuration paths:
+- models.dbt_cortex.semantic
+[0m10:53:10.890348 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': 'f434e7af-c500-4dc2-8905-8c7f688c638c', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x124193c50>]}
+[0m10:53:10.945222 [debug] [MainThread]: Wrote artifact WritableManifest to /Users/axross/Snowflake/QuickStarts/dbt_cortex_analytics/dbt/target/manifest.json
+[0m10:53:10.947250 [debug] [MainThread]: Wrote artifact SemanticManifest to /Users/axross/Snowflake/QuickStarts/dbt_cortex_analytics/dbt/target/semantic_manifest.json
+[0m10:53:10.968607 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': 'f434e7af-c500-4dc2-8905-8c7f688c638c', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x12466aad0>]}
+[0m10:53:10.969017 [info ] [MainThread]: Found 12 models, 58 data tests, 4 sources, 477 macros
+[0m10:53:10.969240 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'f434e7af-c500-4dc2-8905-8c7f688c638c', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1243d1c50>]}
+[0m10:53:10.970908 [info ] [MainThread]: 
+[0m10:53:10.971284 [info ] [MainThread]: Concurrency: 4 threads (target='dev')
+[0m10:53:10.971525 [info ] [MainThread]: 
+[0m10:53:10.971816 [debug] [MainThread]: Acquiring new snowflake connection 'master'
+[0m10:53:10.974681 [debug] [ThreadPool]: Acquiring new snowflake connection 'list_DBT_CORTEX_LLMS'
+[0m10:53:10.975050 [debug] [ThreadPool]: Acquiring new snowflake connection 'list_DBT_CORTEX_LLMS'
+[0m10:53:11.029803 [debug] [ThreadPool]: Using snowflake connection "list_DBT_CORTEX_LLMS"
+[0m10:53:11.030205 [debug] [ThreadPool]: Using snowflake connection "list_DBT_CORTEX_LLMS"
+[0m10:53:11.030518 [debug] [ThreadPool]: On list_DBT_CORTEX_LLMS: /* {"app": "dbt", "dbt_version": "1.10.1", "profile_name": "dbt_cortex", "target_name": "dev", "connection_name": "list_DBT_CORTEX_LLMS"} */
+show terse schemas in database DBT_CORTEX_LLMS
+    limit 10000
+[0m10:53:11.030756 [debug] [ThreadPool]: On list_DBT_CORTEX_LLMS: /* {"app": "dbt", "dbt_version": "1.10.1", "profile_name": "dbt_cortex", "target_name": "dev", "connection_name": "list_DBT_CORTEX_LLMS"} */
+show terse schemas in database DBT_CORTEX_LLMS
+    limit 10000
+[0m10:53:11.030950 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m10:53:11.031151 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m10:53:11.639650 [debug] [ThreadPool]: SQL status: SUCCESS 5 in 0.608 seconds
+[0m10:53:11.651969 [debug] [ThreadPool]: SQL status: SUCCESS 5 in 0.621 seconds
+[0m10:53:11.653811 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_DBT_CORTEX_LLMS, now list_DBT_CORTEX_LLMS_STAGE)
+[0m10:53:11.654149 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_DBT_CORTEX_LLMS, now list_DBT_CORTEX_LLMS_ANALYTICS)
+[0m10:53:11.660983 [debug] [ThreadPool]: Using snowflake connection "list_DBT_CORTEX_LLMS_STAGE"
+[0m10:53:11.662570 [debug] [ThreadPool]: Using snowflake connection "list_DBT_CORTEX_LLMS_ANALYTICS"
+[0m10:53:11.662938 [debug] [ThreadPool]: On list_DBT_CORTEX_LLMS_STAGE: /* {"app": "dbt", "dbt_version": "1.10.1", "profile_name": "dbt_cortex", "target_name": "dev", "connection_name": "list_DBT_CORTEX_LLMS_STAGE"} */
+alter session set quoted_identifiers_ignore_case = false;
+[0m10:53:11.663201 [debug] [ThreadPool]: On list_DBT_CORTEX_LLMS_ANALYTICS: /* {"app": "dbt", "dbt_version": "1.10.1", "profile_name": "dbt_cortex", "target_name": "dev", "connection_name": "list_DBT_CORTEX_LLMS_ANALYTICS"} */
+alter session set quoted_identifiers_ignore_case = false;
+[0m10:53:11.715213 [debug] [ThreadPool]: SQL status: SUCCESS 1 in 0.051 seconds
+[0m10:53:11.718380 [debug] [ThreadPool]: Using snowflake connection "list_DBT_CORTEX_LLMS_ANALYTICS"
+[0m10:53:11.718735 [debug] [ThreadPool]: On list_DBT_CORTEX_LLMS_ANALYTICS: /* {"app": "dbt", "dbt_version": "1.10.1", "profile_name": "dbt_cortex", "target_name": "dev", "connection_name": "list_DBT_CORTEX_LLMS_ANALYTICS"} */
+show objects in DBT_CORTEX_LLMS.ANALYTICS
+    limit 10000
+    
+;
+[0m10:53:11.722380 [debug] [ThreadPool]: SQL status: SUCCESS 1 in 0.059 seconds
+[0m10:53:11.723262 [debug] [ThreadPool]: Using snowflake connection "list_DBT_CORTEX_LLMS_STAGE"
+[0m10:53:11.723456 [debug] [ThreadPool]: On list_DBT_CORTEX_LLMS_STAGE: /* {"app": "dbt", "dbt_version": "1.10.1", "profile_name": "dbt_cortex", "target_name": "dev", "connection_name": "list_DBT_CORTEX_LLMS_STAGE"} */
+show objects in DBT_CORTEX_LLMS.STAGE
+    limit 10000
+    
+;
+[0m10:53:11.866706 [debug] [ThreadPool]: SQL status: SUCCESS 8 in 0.143 seconds
+[0m10:53:11.869005 [debug] [ThreadPool]: Using snowflake connection "list_DBT_CORTEX_LLMS_STAGE"
+[0m10:53:11.869378 [debug] [ThreadPool]: On list_DBT_CORTEX_LLMS_STAGE: /* {"app": "dbt", "dbt_version": "1.10.1", "profile_name": "dbt_cortex", "target_name": "dev", "connection_name": "list_DBT_CORTEX_LLMS_STAGE"} */
+alter session unset quoted_identifiers_ignore_case;
+[0m10:53:11.874452 [debug] [ThreadPool]: SQL status: SUCCESS 8 in 0.155 seconds
+[0m10:53:11.876571 [debug] [ThreadPool]: Using snowflake connection "list_DBT_CORTEX_LLMS_ANALYTICS"
+[0m10:53:11.876936 [debug] [ThreadPool]: On list_DBT_CORTEX_LLMS_ANALYTICS: /* {"app": "dbt", "dbt_version": "1.10.1", "profile_name": "dbt_cortex", "target_name": "dev", "connection_name": "list_DBT_CORTEX_LLMS_ANALYTICS"} */
+alter session unset quoted_identifiers_ignore_case;
+[0m10:53:11.931592 [debug] [ThreadPool]: SQL status: SUCCESS 1 in 0.062 seconds
+[0m10:53:11.932358 [debug] [ThreadPool]: SQL status: SUCCESS 1 in 0.055 seconds
+[0m10:53:11.936768 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'f434e7af-c500-4dc2-8905-8c7f688c638c', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x124c93590>]}
+[0m10:53:11.940669 [debug] [Thread-1 (]: Began running node model.dbt_cortex.stg_customer_interactions
+[0m10:53:11.940984 [debug] [Thread-2 (]: Began running node model.dbt_cortex.stg_customers
+[0m10:53:11.941254 [debug] [Thread-3 (]: Began running node model.dbt_cortex.stg_product_reviews
+[0m10:53:11.941506 [debug] [Thread-4 (]: Began running node model.dbt_cortex.stg_support_tickets
+[0m10:53:11.941835 [info ] [Thread-1 (]: 1 of 12 START sql view model STAGE.stg_customer_interactions ................... [RUN]
+[0m10:53:11.942228 [info ] [Thread-2 (]: 2 of 12 START sql view model STAGE.stg_customers ............................... [RUN]
+[0m10:53:11.942631 [info ] [Thread-3 (]: 3 of 12 START sql view model STAGE.stg_product_reviews ......................... [RUN]
+[0m10:53:11.943005 [info ] [Thread-4 (]: 4 of 12 START sql view model STAGE.stg_support_tickets ......................... [RUN]
+[0m10:53:11.943365 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly list_DBT_CORTEX_LLMS_STAGE, now model.dbt_cortex.stg_customer_interactions)
+[0m10:53:11.943673 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly list_DBT_CORTEX_LLMS_ANALYTICS, now model.dbt_cortex.stg_customers)
+[0m10:53:11.944029 [debug] [Thread-3 (]: Acquiring new snowflake connection 'model.dbt_cortex.stg_product_reviews'
+[0m10:53:11.944343 [debug] [Thread-4 (]: Acquiring new snowflake connection 'model.dbt_cortex.stg_support_tickets'
+[0m10:53:11.944599 [debug] [Thread-1 (]: Began compiling node model.dbt_cortex.stg_customer_interactions
+[0m10:53:11.944848 [debug] [Thread-2 (]: Began compiling node model.dbt_cortex.stg_customers
+[0m10:53:11.945101 [debug] [Thread-3 (]: Began compiling node model.dbt_cortex.stg_product_reviews
+[0m10:53:11.945335 [debug] [Thread-4 (]: Began compiling node model.dbt_cortex.stg_support_tickets
+[0m10:53:11.952065 [debug] [Thread-1 (]: Writing injected SQL for node "model.dbt_cortex.stg_customer_interactions"
+[0m10:53:12.008384 [debug] [Thread-2 (]: Writing injected SQL for node "model.dbt_cortex.stg_customers"
+[0m10:53:12.010120 [debug] [Thread-3 (]: Writing injected SQL for node "model.dbt_cortex.stg_product_reviews"
+[0m10:53:12.011556 [debug] [Thread-4 (]: Writing injected SQL for node "model.dbt_cortex.stg_support_tickets"
+[0m10:53:12.012790 [debug] [Thread-2 (]: Began executing node model.dbt_cortex.stg_customers
+[0m10:53:12.013054 [debug] [Thread-1 (]: Began executing node model.dbt_cortex.stg_customer_interactions
+[0m10:53:12.013311 [debug] [Thread-3 (]: Began executing node model.dbt_cortex.stg_product_reviews
+[0m10:53:12.013586 [debug] [Thread-4 (]: Began executing node model.dbt_cortex.stg_support_tickets
+[0m10:53:12.029769 [debug] [Thread-2 (]: Writing runtime sql for node "model.dbt_cortex.stg_customers"
+[0m10:53:12.031506 [debug] [Thread-1 (]: Writing runtime sql for node "model.dbt_cortex.stg_customer_interactions"
+[0m10:53:12.032882 [debug] [Thread-3 (]: Writing runtime sql for node "model.dbt_cortex.stg_product_reviews"
+[0m10:53:12.034273 [debug] [Thread-4 (]: Writing runtime sql for node "model.dbt_cortex.stg_support_tickets"
+[0m10:53:12.035773 [debug] [Thread-1 (]: Using snowflake connection "model.dbt_cortex.stg_customer_interactions"
+[0m10:53:12.036412 [debug] [Thread-3 (]: Using snowflake connection "model.dbt_cortex.stg_product_reviews"
+[0m10:53:12.036842 [debug] [Thread-2 (]: Using snowflake connection "model.dbt_cortex.stg_customers"
+[0m10:53:12.037092 [debug] [Thread-1 (]: On model.dbt_cortex.stg_customer_interactions: /* {"app": "dbt", "dbt_version": "1.10.1", "profile_name": "dbt_cortex", "target_name": "dev", "node_id": "model.dbt_cortex.stg_customer_interactions"} */
+create or replace   view DBT_CORTEX_LLMS.STAGE.stg_customer_interactions
+  
+   as (
+    -- Staging model for customer interactions
+-- This model extracts and standardizes customer interaction information from the raw JSON data
+-- Fields are cast to appropriate data types and renamed for clarity
+
+SELECT
+    data:interaction_id::VARCHAR AS interaction_id,
+    data:customer_id::VARCHAR AS customer_id,
+    TRY_TO_TIMESTAMP_NTZ(data:interaction_date::VARCHAR) AS interaction_date,
+    data:agent_id::VARCHAR AS agent_id,
+    data:interaction_type::VARCHAR AS interaction_type,
+    data:interaction_notes::VARCHAR AS interaction_notes
+FROM DBT_CORTEX_LLMS.STAGE.customer_interactions
+  );
+[0m10:53:12.037647 [debug] [Thread-4 (]: Using snowflake connection "model.dbt_cortex.stg_support_tickets"
+[0m10:53:12.037948 [debug] [Thread-3 (]: On model.dbt_cortex.stg_product_reviews: /* {"app": "dbt", "dbt_version": "1.10.1", "profile_name": "dbt_cortex", "target_name": "dev", "node_id": "model.dbt_cortex.stg_product_reviews"} */
+create or replace   view DBT_CORTEX_LLMS.STAGE.stg_product_reviews
+  
+   as (
+    -- Staging model for product reviews
+-- This model extracts and standardizes product review information from the raw JSON data
+-- Fields are cast to appropriate data types and renamed for clarity
+
+SELECT
+    data:review_id::VARCHAR AS review_id,
+    data:customer_id::VARCHAR AS customer_id,
+    data:product_id::VARCHAR AS product_id,
+    TRY_TO_TIMESTAMP_NTZ(data:review_date::VARCHAR) AS review_date,
+    data:review_rating::NUMBER AS review_rating,
+    data:review_text::VARCHAR AS review_text,
+    data:review_language::VARCHAR AS review_language
+FROM DBT_CORTEX_LLMS.STAGE.product_reviews
+  );
+[0m10:53:12.038264 [debug] [Thread-2 (]: On model.dbt_cortex.stg_customers: /* {"app": "dbt", "dbt_version": "1.10.1", "profile_name": "dbt_cortex", "target_name": "dev", "node_id": "model.dbt_cortex.stg_customers"} */
+create or replace   view DBT_CORTEX_LLMS.STAGE.stg_customers
+  
+   as (
+    -- Staging model for customer data
+-- This model extracts and standardizes customer information from the raw JSON data
+-- Fields are cast to appropriate data types and renamed for clarity
+
+SELECT
+    data:customer_id::VARCHAR AS customer_id,
+    data:persona::VARCHAR AS persona,
+    TRY_TO_DATE(data:sign_up_date::VARCHAR) AS sign_up_date,
+    data:products_owned::NUMBER AS products_owned,
+    data:lifetime_value::NUMBER AS lifetime_value
+FROM DBT_CORTEX_LLMS.STAGE.customers
+  );
+[0m10:53:12.038803 [debug] [Thread-4 (]: On model.dbt_cortex.stg_support_tickets: /* {"app": "dbt", "dbt_version": "1.10.1", "profile_name": "dbt_cortex", "target_name": "dev", "node_id": "model.dbt_cortex.stg_support_tickets"} */
+create or replace   view DBT_CORTEX_LLMS.STAGE.stg_support_tickets
+  
+   as (
+    -- Staging model for support tickets
+-- This model extracts and standardizes support ticket information from the raw JSON data
+-- Fields are cast to appropriate data types and renamed for clarity
+
+SELECT
+    data:ticket_id::VARCHAR AS ticket_id,
+    data:customer_id::VARCHAR AS customer_id,
+    TRY_TO_TIMESTAMP_NTZ(data:ticket_date::VARCHAR) AS ticket_date,
+    data:ticket_status::VARCHAR AS ticket_status,
+    data:ticket_category::VARCHAR AS ticket_category,
+    data:ticket_description::VARCHAR AS ticket_description
+FROM DBT_CORTEX_LLMS.STAGE.support_tickets
+  );
+[0m10:53:12.039281 [debug] [Thread-3 (]: Opening a new connection, currently in state init
+[0m10:53:12.039922 [debug] [Thread-4 (]: Opening a new connection, currently in state init
+[0m10:53:12.274569 [debug] [Thread-1 (]: SQL status: SUCCESS 1 in 0.236 seconds
+[0m10:53:12.290121 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'f434e7af-c500-4dc2-8905-8c7f688c638c', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1244378d0>]}
+[0m10:53:12.290687 [info ] [Thread-1 (]: 1 of 12 OK created sql view model STAGE.stg_customer_interactions .............. [[32mSUCCESS 1[0m in 0.34s]
+[0m10:53:12.291048 [debug] [Thread-1 (]: Finished running node model.dbt_cortex.stg_customer_interactions
+[0m10:53:12.291417 [debug] [Thread-1 (]: Began running node model.dbt_cortex.fact_customer_interactions
+[0m10:53:12.291665 [info ] [Thread-1 (]: 5 of 12 START sql table model ANALYTICS.fact_customer_interactions ............. [RUN]
+[0m10:53:12.291933 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly model.dbt_cortex.stg_customer_interactions, now model.dbt_cortex.fact_customer_interactions)
+[0m10:53:12.292128 [debug] [Thread-1 (]: Began compiling node model.dbt_cortex.fact_customer_interactions
+[0m10:53:12.293946 [debug] [Thread-1 (]: Writing injected SQL for node "model.dbt_cortex.fact_customer_interactions"
+[0m10:53:12.294899 [debug] [Thread-1 (]: Began executing node model.dbt_cortex.fact_customer_interactions
+[0m10:53:12.308841 [debug] [Thread-1 (]: Writing runtime sql for node "model.dbt_cortex.fact_customer_interactions"
+[0m10:53:12.309970 [debug] [Thread-1 (]: Using snowflake connection "model.dbt_cortex.fact_customer_interactions"
+[0m10:53:12.310220 [debug] [Thread-1 (]: On model.dbt_cortex.fact_customer_interactions: /* {"app": "dbt", "dbt_version": "1.10.1", "profile_name": "dbt_cortex", "target_name": "dev", "node_id": "model.dbt_cortex.fact_customer_interactions"} */
+create or replace transient table DBT_CORTEX_LLMS.ANALYTICS.fact_customer_interactions
+    
+
+    
+    as (-- Fact model for customer interactions with sentiment analysis
+-- This model enriches customer interactions with AI-generated sentiment scores
+-- Uses Snowflake Cortex for sentiment analysis
+
+SELECT
+    i.interaction_id,
+    i.customer_id,
+    i.interaction_date,
+    i.agent_id,
+    i.interaction_type,
+    i.interaction_notes,
+    -- Add sentiment analysis using Snowflake Cortex
+    SNOWFLAKE.CORTEX.SENTIMENT(i.interaction_notes) AS sentiment_score
+FROM DBT_CORTEX_LLMS.STAGE.stg_customer_interactions i
+WHERE i.interaction_notes IS NOT NULL
+    )
+;
+[0m10:53:12.373894 [debug] [Thread-2 (]: SQL status: SUCCESS 1 in 0.334 seconds
+[0m10:53:12.376742 [debug] [Thread-2 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'f434e7af-c500-4dc2-8905-8c7f688c638c', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x12418bd50>]}
+[0m10:53:12.377474 [info ] [Thread-2 (]: 2 of 12 OK created sql view model STAGE.stg_customers .......................... [[32mSUCCESS 1[0m in 0.43s]
+[0m10:53:12.378106 [debug] [Thread-2 (]: Finished running node model.dbt_cortex.stg_customers
+[0m10:53:12.567512 [debug] [Thread-4 (]: SQL status: SUCCESS 1 in 0.528 seconds
+[0m10:53:12.568964 [debug] [Thread-4 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'f434e7af-c500-4dc2-8905-8c7f688c638c', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x111144590>]}
+[0m10:53:12.569405 [info ] [Thread-4 (]: 4 of 12 OK created sql view model STAGE.stg_support_tickets .................... [[32mSUCCESS 1[0m in 0.62s]
+[0m10:53:12.569787 [debug] [Thread-4 (]: Finished running node model.dbt_cortex.stg_support_tickets
+[0m10:53:12.570156 [debug] [Thread-2 (]: Began running node model.dbt_cortex.fact_support_tickets
+[0m10:53:12.570455 [info ] [Thread-2 (]: 6 of 12 START sql table model ANALYTICS.fact_support_tickets ................... [RUN]
+[0m10:53:12.570738 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly model.dbt_cortex.stg_customers, now model.dbt_cortex.fact_support_tickets)
+[0m10:53:12.570977 [debug] [Thread-2 (]: Began compiling node model.dbt_cortex.fact_support_tickets
+[0m10:53:12.573843 [debug] [Thread-2 (]: Writing injected SQL for node "model.dbt_cortex.fact_support_tickets"
+[0m10:53:12.574637 [debug] [Thread-2 (]: Began executing node model.dbt_cortex.fact_support_tickets
+[0m10:53:12.576942 [debug] [Thread-2 (]: Writing runtime sql for node "model.dbt_cortex.fact_support_tickets"
+[0m10:53:12.578588 [debug] [Thread-2 (]: Using snowflake connection "model.dbt_cortex.fact_support_tickets"
+[0m10:53:12.579056 [debug] [Thread-2 (]: On model.dbt_cortex.fact_support_tickets: /* {"app": "dbt", "dbt_version": "1.10.1", "profile_name": "dbt_cortex", "target_name": "dev", "node_id": "model.dbt_cortex.fact_support_tickets"} */
+create or replace transient table DBT_CORTEX_LLMS.ANALYTICS.fact_support_tickets
+    
+
+    
+    as (-- Fact model for support tickets with sentiment analysis and priority classification
+-- This model enriches support tickets with AI-generated sentiment scores and priority levels
+-- Uses Snowflake Cortex for sentiment analysis and text classification
+
+SELECT
+    t.ticket_id,
+    t.customer_id,
+    t.ticket_date,
+    t.ticket_status,
+    t.ticket_category,
+    t.ticket_description,
+    -- Add sentiment analysis
+    SNOWFLAKE.CORTEX.SENTIMENT(t.ticket_description) AS sentiment_score,
+    -- Add priority classification
+    SNOWFLAKE.CORTEX.CLASSIFY_TEXT(
+        t.ticket_description,
+        [
+            {
+                'label': 'Critical',
+                'description': 'Requires immediate attention and resolution',
+                'examples': [
+                    'System is down and customers cannot place orders',
+                    'Security breach detected',
+                    'Payment processing completely stopped',
+                    'All users locked out of the system'
+                ]
+            },
+            {
+                'label': 'High',
+                'description': 'Should be resolved within 24 hours',
+                'examples': [
+                    'Customer cannot complete checkout',
+                    'Order status stuck in processing',
+                    'Unable to access account',
+                    'Payment failed for multiple customers'
+                ]
+            },
+            {
+                'label': 'Medium',
+                'description': 'Should be resolved within 3 days',
+                'examples': [
+                    'Product image not displaying correctly',
+                    'Slow response times in certain areas',
+                    'Minor UI issues',
+                    'Account settings not saving'
+                ]
+            },
+            {
+                'label': 'Low',
+                'description': 'Can be handled in regular queue',
+                'examples': [
+                    'General product questions',
+                    'Feature request',
+                    'UI enhancement suggestion',
+                    'Documentation clarification'
+                ]
+            }
+        ],
+        {
+            'task_description': 'Classify the urgency level of this support ticket based on its description'
+        }
+    )['label'] AS priority_level,
+    -- Add customer expectations
+    SNOWFLAKE.CORTEX.COMPLETE(
+        'claude-4-sonnet',
+        'What specific timeframe or deadline does the customer mention or expect for resolution? ' || t.ticket_description
+    ) AS expected_resolution_timeframe,
+    SNOWFLAKE.CORTEX.COMPLETE(
+        'claude-4-sonnet',
+        'What compensation, refund, or specific remedy is the customer seeking? ' || t.ticket_description
+    ) AS requested_remedy
+FROM DBT_CORTEX_LLMS.STAGE.stg_support_tickets t
+WHERE t.ticket_description IS NOT NULL
+    )
+;
+[0m10:53:12.600282 [debug] [Thread-3 (]: SQL status: SUCCESS 1 in 0.561 seconds
+[0m10:53:12.601656 [debug] [Thread-3 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'f434e7af-c500-4dc2-8905-8c7f688c638c', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x12408ff10>]}
+[0m10:53:12.602076 [info ] [Thread-3 (]: 3 of 12 OK created sql view model STAGE.stg_product_reviews .................... [[32mSUCCESS 1[0m in 0.66s]
+[0m10:53:12.602422 [debug] [Thread-3 (]: Finished running node model.dbt_cortex.stg_product_reviews
+[0m10:53:12.602862 [debug] [Thread-4 (]: Began running node model.dbt_cortex.fact_product_reviews
+[0m10:53:12.603326 [info ] [Thread-4 (]: 7 of 12 START sql table model ANALYTICS.fact_product_reviews ................... [RUN]
+[0m10:53:12.603797 [debug] [Thread-4 (]: Re-using an available connection from the pool (formerly model.dbt_cortex.stg_support_tickets, now model.dbt_cortex.fact_product_reviews)
+[0m10:53:12.604065 [debug] [Thread-4 (]: Began compiling node model.dbt_cortex.fact_product_reviews
+[0m10:53:12.606230 [debug] [Thread-4 (]: Writing injected SQL for node "model.dbt_cortex.fact_product_reviews"
+[0m10:53:12.607035 [debug] [Thread-4 (]: Began executing node model.dbt_cortex.fact_product_reviews
+[0m10:53:12.608891 [debug] [Thread-4 (]: Writing runtime sql for node "model.dbt_cortex.fact_product_reviews"
+[0m10:53:12.610366 [debug] [Thread-4 (]: Using snowflake connection "model.dbt_cortex.fact_product_reviews"
+[0m10:53:12.610712 [debug] [Thread-4 (]: On model.dbt_cortex.fact_product_reviews: /* {"app": "dbt", "dbt_version": "1.10.1", "profile_name": "dbt_cortex", "target_name": "dev", "node_id": "model.dbt_cortex.fact_product_reviews"} */
+create or replace transient table DBT_CORTEX_LLMS.ANALYTICS.fact_product_reviews
+    
+
+    
+    as (-- Fact model for product reviews with sentiment analysis and translations
+-- This model enriches product reviews with AI-generated sentiment scores and translations
+-- Uses Snowflake Cortex for sentiment analysis and translation
+
+SELECT
+    r.review_id,
+    r.customer_id,
+    r.product_id,
+    r.review_date,
+    r.review_rating,
+    r.review_text,
+    r.review_language,
+    -- Add sentiment analysis
+    SNOWFLAKE.CORTEX.SENTIMENT(r.review_text) AS sentiment_score,
+    -- Add standardized text with translations
+    CASE
+        WHEN CONTAINS(LOWER(r.review_language), 'german') THEN SNOWFLAKE.CORTEX.TRANSLATE(r.review_text, 'de', 'en')
+        WHEN CONTAINS(LOWER(r.review_language), 'french') THEN SNOWFLAKE.CORTEX.TRANSLATE(r.review_text, 'fr', 'en')
+        WHEN CONTAINS(LOWER(r.review_language), 'spanish') THEN SNOWFLAKE.CORTEX.TRANSLATE(r.review_text, 'es', 'en')
+        WHEN CONTAINS(LOWER(r.review_language), 'italian') THEN SNOWFLAKE.CORTEX.TRANSLATE(r.review_text, 'it', 'en')
+        WHEN CONTAINS(LOWER(r.review_language), 'portuguese') THEN SNOWFLAKE.CORTEX.TRANSLATE(r.review_text, 'pt', 'en')
+        WHEN CONTAINS(LOWER(r.review_language), 'chinese') THEN SNOWFLAKE.CORTEX.TRANSLATE(r.review_text, 'zh', 'en')
+        WHEN CONTAINS(LOWER(r.review_language), 'japanese') THEN SNOWFLAKE.CORTEX.TRANSLATE(r.review_text, 'ja', 'en')
+        WHEN CONTAINS(LOWER(r.review_language), 'korean') THEN SNOWFLAKE.CORTEX.TRANSLATE(r.review_text, 'ko', 'en')
+        WHEN CONTAINS(LOWER(r.review_language), 'russian') THEN SNOWFLAKE.CORTEX.TRANSLATE(r.review_text, 'ru', 'en')
+        WHEN CONTAINS(LOWER(r.review_language), 'arabic') THEN SNOWFLAKE.CORTEX.TRANSLATE(r.review_text, 'ar', 'en')
+        ELSE r.review_text
+    END AS review_text_english
+FROM DBT_CORTEX_LLMS.STAGE.stg_product_reviews r
+WHERE r.review_text IS NOT NULL
+    )
+;
+[0m10:53:14.187806 [debug] [Thread-1 (]: SQL status: SUCCESS 1 in 1.877 seconds
+[0m10:53:14.190903 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'f434e7af-c500-4dc2-8905-8c7f688c638c', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x124038450>]}
+[0m10:53:14.191587 [info ] [Thread-1 (]: 5 of 12 OK created sql table model ANALYTICS.fact_customer_interactions ........ [[32mSUCCESS 1[0m in 1.90s]
+[0m10:53:14.192088 [debug] [Thread-1 (]: Finished running node model.dbt_cortex.fact_customer_interactions
+[0m10:56:27.217640 [debug] [Thread-4 (]: SQL status: SUCCESS 1 in 194.604 seconds
+[0m10:56:27.229820 [debug] [Thread-4 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'f434e7af-c500-4dc2-8905-8c7f688c638c', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x123cb0690>]}
+[0m10:56:27.231640 [info ] [Thread-4 (]: 7 of 12 OK created sql table model ANALYTICS.fact_product_reviews .............. [[32mSUCCESS 1[0m in 194.62s]
+[0m10:56:27.232251 [debug] [Thread-4 (]: Finished running node model.dbt_cortex.fact_product_reviews
+[0m10:59:28.483130 [debug] [MainThread]: Wrote artifact RunExecutionResult to /Users/axross/Snowflake/QuickStarts/dbt_cortex_analytics/dbt/target/run_results.json
+[0m10:59:28.486461 [debug] [MainThread]: Snowflake adapter: Cancelling query 'model.dbt_cortex.fact_customer_interactions' (287067103617126)
+[0m10:59:28.486986 [debug] [MainThread]: Using snowflake connection "master"
+[0m10:59:28.487203 [debug] [MainThread]: On master: /* {"app": "dbt", "dbt_version": "1.10.1", "profile_name": "dbt_cortex", "target_name": "dev", "connection_name": "master"} */
+select system$cancel_all_queries(287067103617126)
+[0m10:59:28.487656 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m10:59:28.990547 [debug] [MainThread]: Connection 'master' was left open.
+[0m10:59:28.990935 [debug] [MainThread]: On master: Close
+[0m10:59:29.084700 [debug] [MainThread]: Connection 'model.dbt_cortex.fact_customer_interactions' was left open.
+[0m10:59:29.085110 [debug] [MainThread]: On model.dbt_cortex.fact_customer_interactions: Close
+[0m10:59:29.159384 [error] [MainThread]: Encountered an error:
+
+[0m10:59:29.170959 [error] [MainThread]: Traceback (most recent call last):
+  File "/opt/miniconda3/envs/py311/lib/python3.11/site-packages/dbt/cli/requires.py", line 161, in wrapper
+    result, success = func(*args, **kwargs)
+                      ^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/miniconda3/envs/py311/lib/python3.11/site-packages/dbt/cli/requires.py", line 111, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/miniconda3/envs/py311/lib/python3.11/site-packages/dbt/cli/requires.py", line 254, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/miniconda3/envs/py311/lib/python3.11/site-packages/dbt/cli/requires.py", line 285, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/miniconda3/envs/py311/lib/python3.11/site-packages/dbt/cli/requires.py", line 355, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/miniconda3/envs/py311/lib/python3.11/site-packages/dbt/cli/requires.py", line 332, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/miniconda3/envs/py311/lib/python3.11/site-packages/dbt/cli/requires.py", line 372, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/miniconda3/envs/py311/lib/python3.11/site-packages/dbt/cli/main.py", line 586, in run
+    results = task.run()
+              ^^^^^^^^^^
+  File "/opt/miniconda3/envs/py311/lib/python3.11/site-packages/dbt/task/runnable.py", line 599, in run
+    result = self.execute_with_hooks(selected_uids)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/miniconda3/envs/py311/lib/python3.11/site-packages/dbt/task/runnable.py", line 565, in execute_with_hooks
+    adapter.cleanup_connections()
+  File "/opt/miniconda3/envs/py311/lib/python3.11/site-packages/dbt/adapters/base/impl.py", line 382, in cleanup_connections
+    self.connections.cleanup_all()
+  File "/opt/miniconda3/envs/py311/lib/python3.11/site-packages/dbt/adapters/base/connections.py", line 309, in cleanup_all
+    self.close(connection)
+  File "/opt/miniconda3/envs/py311/lib/python3.11/site-packages/dbt/adapters/base/connections.py", line 379, in close
+    cls._close_handle(connection)
+  File "/opt/miniconda3/envs/py311/lib/python3.11/site-packages/dbt/adapters/base/connections.py", line 346, in _close_handle
+    connection.handle.close()
+  File "/opt/miniconda3/envs/py311/lib/python3.11/site-packages/snowflake/connector/connection.py", line 925, in close
+    self._telemetry.close(send_on_close=bool(retry and self.telemetry_enabled))
+  File "/opt/miniconda3/envs/py311/lib/python3.11/site-packages/snowflake/connector/telemetry.py", line 209, in close
+    self.send_batch()
+  File "/opt/miniconda3/envs/py311/lib/python3.11/site-packages/snowflake/connector/telemetry.py", line 181, in send_batch
+    ret = self._rest.request(
+          ^^^^^^^^^^^^^^^^^^^
+  File "/opt/miniconda3/envs/py311/lib/python3.11/site-packages/snowflake/connector/network.py", line 511, in request
+    return self._post_request(
+           ^^^^^^^^^^^^^^^^^^^
+  File "/opt/miniconda3/envs/py311/lib/python3.11/site-packages/snowflake/connector/network.py", line 759, in _post_request
+    ret = self.fetch(
+          ^^^^^^^^^^^
+  File "/opt/miniconda3/envs/py311/lib/python3.11/site-packages/snowflake/connector/network.py", line 874, in fetch
+    ret = self._request_exec_wrapper(
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/miniconda3/envs/py311/lib/python3.11/site-packages/snowflake/connector/network.py", line 924, in _request_exec_wrapper
+    return_object = self._request_exec(
+                    ^^^^^^^^^^^^^^^^^^^
+  File "/opt/miniconda3/envs/py311/lib/python3.11/site-packages/snowflake/connector/network.py", line 1091, in _request_exec
+    raw_ret = session.request(
+              ^^^^^^^^^^^^^^^^
+  File "/opt/miniconda3/envs/py311/lib/python3.11/site-packages/snowflake/connector/vendored/requests/sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/miniconda3/envs/py311/lib/python3.11/site-packages/snowflake/connector/vendored/requests/sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/miniconda3/envs/py311/lib/python3.11/site-packages/snowflake/connector/vendored/requests/adapters.py", line 485, in send
+    resp = conn.urlopen(
+           ^^^^^^^^^^^^^
+  File "/opt/miniconda3/envs/py311/lib/python3.11/site-packages/snowflake/connector/vendored/urllib3/connectionpool.py", line 715, in urlopen
+    httplib_response = self._make_request(
+                       ^^^^^^^^^^^^^^^^^^^
+  File "/opt/miniconda3/envs/py311/lib/python3.11/site-packages/snowflake/connector/vendored/urllib3/connectionpool.py", line 467, in _make_request
+    six.raise_from(e, None)
+  File "<string>", line 3, in raise_from
+  File "/opt/miniconda3/envs/py311/lib/python3.11/site-packages/snowflake/connector/vendored/urllib3/connectionpool.py", line 462, in _make_request
+    httplib_response = conn.getresponse()
+                       ^^^^^^^^^^^^^^^^^^
+  File "/opt/miniconda3/envs/py311/lib/python3.11/http/client.py", line 1395, in getresponse
+    response.begin()
+  File "/opt/miniconda3/envs/py311/lib/python3.11/http/client.py", line 325, in begin
+    version, status, reason = self._read_status()
+                              ^^^^^^^^^^^^^^^^^^^
+  File "/opt/miniconda3/envs/py311/lib/python3.11/http/client.py", line 286, in _read_status
+    line = str(self.fp.readline(_MAXLINE + 1), "iso-8859-1")
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/miniconda3/envs/py311/lib/python3.11/socket.py", line 718, in readinto
+    return self._sock.recv_into(b)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/miniconda3/envs/py311/lib/python3.11/site-packages/snowflake/connector/vendored/urllib3/contrib/pyopenssl.py", line 330, in recv_into
+    if not util.wait_for_read(self.socket, self.socket.gettimeout()):
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/miniconda3/envs/py311/lib/python3.11/site-packages/snowflake/connector/vendored/urllib3/util/wait.py", line 145, in wait_for_read
+    return wait_for_socket(sock, read=True, timeout=timeout)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/miniconda3/envs/py311/lib/python3.11/site-packages/snowflake/connector/vendored/urllib3/util/wait.py", line 106, in poll_wait_for_socket
+    return bool(_retry_on_intr(do_poll, timeout))
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/miniconda3/envs/py311/lib/python3.11/site-packages/snowflake/connector/vendored/urllib3/util/wait.py", line 43, in _retry_on_intr
+    return fn(timeout)
+           ^^^^^^^^^^^
+  File "/opt/miniconda3/envs/py311/lib/python3.11/site-packages/snowflake/connector/vendored/urllib3/util/wait.py", line 104, in do_poll
+    return poll_obj.poll(t)
+           ^^^^^^^^^^^^^^^^
+KeyboardInterrupt
+
+[0m10:59:29.176756 [debug] [MainThread]: Resource report: {"command_name": "run", "command_success": false, "command_wall_clock_time": 380.3194, "process_in_blocks": "0", "process_kernel_time": 0.635041, "process_mem_max_rss": "230785024", "process_out_blocks": "0", "process_user_time": 3.299453}
+[0m10:59:29.177147 [debug] [MainThread]: Command `dbt run` failed at 10:59:29.177075 after 380.32 seconds
+[0m10:59:29.177429 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m10:59:29.177586 [debug] [MainThread]: Connection 'model.dbt_cortex.fact_customer_interactions' was left open.
+[0m10:59:29.177739 [debug] [MainThread]: On model.dbt_cortex.fact_customer_interactions: Close
+[0m10:59:29.297483 [debug] [MainThread]: Flushing usage events
+[0m11:00:40.084981 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10bfb4d90>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10c028f50>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10c02a010>]}
+
+
+============================== 11:00:40.088750 | 635ca3b5-f4b5-4388-af32-ccd829d870c5 ==============================
+[0m11:00:40.088750 [info ] [MainThread]: Running with dbt=1.10.1
+[0m11:00:40.089150 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': '/Users/axross/.dbt', 'fail_fast': 'False', 'warn_error': 'None', 'log_path': '/Users/axross/Snowflake/QuickStarts/dbt_cortex_analytics/dbt/logs', 'version_check': 'True', 'debug': 'False', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'empty': 'False', 'log_format': 'default', 'invocation_command': 'dbt run', 'static_parser': 'True', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'target_path': 'None', 'introspect': 'True', 'send_anonymous_usage_stats': 'True'}
+[0m11:00:41.156150 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '635ca3b5-f4b5-4388-af32-ccd829d870c5', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x118c860d0>]}
+[0m11:00:41.188680 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '635ca3b5-f4b5-4388-af32-ccd829d870c5', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x11c16bf10>]}
+[0m11:00:41.189697 [info ] [MainThread]: Registered adapter: snowflake=1.9.4
+[0m11:00:41.279260 [debug] [MainThread]: checksum: 2c026f85d539c10c69b093157526ce33d0bf5533489eafb07fe5172434ec7740, vars: {}, profile: , target: , version: 1.10.1
+[0m11:00:41.387951 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 0 files changed.
+[0m11:00:41.388285 [debug] [MainThread]: Partial parsing enabled, no changes found, skipping parsing
+[0m11:00:41.391876 [warn ] [MainThread]: [[33mWARNING[0m]: Configuration paths exist in your dbt_project.yml file which do not apply to any resources.
+There are 1 unused configuration paths:
+- models.dbt_cortex.semantic
+[0m11:00:41.415355 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '635ca3b5-f4b5-4388-af32-ccd829d870c5', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x11c5a8b50>]}
+[0m11:00:41.522810 [debug] [MainThread]: Wrote artifact WritableManifest to /Users/axross/Snowflake/QuickStarts/dbt_cortex_analytics/dbt/target/manifest.json
+[0m11:00:41.524903 [debug] [MainThread]: Wrote artifact SemanticManifest to /Users/axross/Snowflake/QuickStarts/dbt_cortex_analytics/dbt/target/semantic_manifest.json
+[0m11:00:41.544342 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '635ca3b5-f4b5-4388-af32-ccd829d870c5', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x11c809b90>]}
+[0m11:00:41.544761 [info ] [MainThread]: Found 12 models, 58 data tests, 4 sources, 477 macros
+[0m11:00:41.544978 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '635ca3b5-f4b5-4388-af32-ccd829d870c5', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10901e050>]}
+[0m11:00:41.546695 [info ] [MainThread]: 
+[0m11:00:41.546981 [info ] [MainThread]: Concurrency: 4 threads (target='dev')
+[0m11:00:41.547153 [info ] [MainThread]: 
+[0m11:00:41.547433 [debug] [MainThread]: Acquiring new snowflake connection 'master'
+[0m11:00:41.550143 [debug] [ThreadPool]: Acquiring new snowflake connection 'list_DBT_CORTEX_LLMS'
+[0m11:00:41.558407 [debug] [ThreadPool]: Acquiring new snowflake connection 'list_DBT_CORTEX_LLMS'
+[0m11:00:41.615637 [debug] [ThreadPool]: Using snowflake connection "list_DBT_CORTEX_LLMS"
+[0m11:00:41.616046 [debug] [ThreadPool]: Using snowflake connection "list_DBT_CORTEX_LLMS"
+[0m11:00:41.616371 [debug] [ThreadPool]: On list_DBT_CORTEX_LLMS: /* {"app": "dbt", "dbt_version": "1.10.1", "profile_name": "dbt_cortex", "target_name": "dev", "connection_name": "list_DBT_CORTEX_LLMS"} */
+show terse schemas in database DBT_CORTEX_LLMS
+    limit 10000
+[0m11:00:41.616635 [debug] [ThreadPool]: On list_DBT_CORTEX_LLMS: /* {"app": "dbt", "dbt_version": "1.10.1", "profile_name": "dbt_cortex", "target_name": "dev", "connection_name": "list_DBT_CORTEX_LLMS"} */
+show terse schemas in database DBT_CORTEX_LLMS
+    limit 10000
+[0m11:00:41.616853 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m11:00:41.617031 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m11:00:42.292087 [debug] [ThreadPool]: SQL status: SUCCESS 4 in 0.675 seconds
+[0m11:00:42.410325 [debug] [ThreadPool]: SQL status: SUCCESS 4 in 0.793 seconds
+[0m11:00:42.411833 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_DBT_CORTEX_LLMS, now create_DBT_CORTEX_LLMS_ANALYTICS)
+[0m11:00:42.412260 [debug] [ThreadPool]: Creating schema "database: "DBT_CORTEX_LLMS"
+schema: "ANALYTICS"
+"
+[0m11:00:42.415954 [debug] [ThreadPool]: Using snowflake connection "create_DBT_CORTEX_LLMS_ANALYTICS"
+[0m11:00:42.416317 [debug] [ThreadPool]: On create_DBT_CORTEX_LLMS_ANALYTICS: /* {"app": "dbt", "dbt_version": "1.10.1", "profile_name": "dbt_cortex", "target_name": "dev", "connection_name": "create_DBT_CORTEX_LLMS_ANALYTICS"} */
+create schema if not exists DBT_CORTEX_LLMS.ANALYTICS
+[0m11:00:42.563525 [debug] [ThreadPool]: SQL status: SUCCESS 1 in 0.147 seconds
+[0m11:00:42.566164 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly create_DBT_CORTEX_LLMS_ANALYTICS, now list_DBT_CORTEX_LLMS_ANALYTICS)
+[0m11:00:42.566855 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_DBT_CORTEX_LLMS, now list_DBT_CORTEX_LLMS_STAGE)
+[0m11:00:42.577392 [debug] [ThreadPool]: Using snowflake connection "list_DBT_CORTEX_LLMS_ANALYTICS"
+[0m11:00:42.579267 [debug] [ThreadPool]: Using snowflake connection "list_DBT_CORTEX_LLMS_STAGE"
+[0m11:00:42.579745 [debug] [ThreadPool]: On list_DBT_CORTEX_LLMS_ANALYTICS: /* {"app": "dbt", "dbt_version": "1.10.1", "profile_name": "dbt_cortex", "target_name": "dev", "connection_name": "list_DBT_CORTEX_LLMS_ANALYTICS"} */
+alter session set quoted_identifiers_ignore_case = false;
+[0m11:00:42.580147 [debug] [ThreadPool]: On list_DBT_CORTEX_LLMS_STAGE: /* {"app": "dbt", "dbt_version": "1.10.1", "profile_name": "dbt_cortex", "target_name": "dev", "connection_name": "list_DBT_CORTEX_LLMS_STAGE"} */
+alter session set quoted_identifiers_ignore_case = false;
+[0m11:00:42.643911 [debug] [ThreadPool]: SQL status: SUCCESS 1 in 0.063 seconds
+[0m11:00:42.646721 [debug] [ThreadPool]: Using snowflake connection "list_DBT_CORTEX_LLMS_ANALYTICS"
+[0m11:00:42.647001 [debug] [ThreadPool]: On list_DBT_CORTEX_LLMS_ANALYTICS: /* {"app": "dbt", "dbt_version": "1.10.1", "profile_name": "dbt_cortex", "target_name": "dev", "connection_name": "list_DBT_CORTEX_LLMS_ANALYTICS"} */
+show objects in DBT_CORTEX_LLMS.ANALYTICS
+    limit 10000
+    
+;
+[0m11:00:42.713780 [debug] [ThreadPool]: SQL status: SUCCESS 1 in 0.133 seconds
+[0m11:00:42.714808 [debug] [ThreadPool]: Using snowflake connection "list_DBT_CORTEX_LLMS_STAGE"
+[0m11:00:42.715019 [debug] [ThreadPool]: On list_DBT_CORTEX_LLMS_STAGE: /* {"app": "dbt", "dbt_version": "1.10.1", "profile_name": "dbt_cortex", "target_name": "dev", "connection_name": "list_DBT_CORTEX_LLMS_STAGE"} */
+show objects in DBT_CORTEX_LLMS.STAGE
+    limit 10000
+    
+;
+[0m11:00:42.757902 [debug] [ThreadPool]: SQL status: SUCCESS 0 in 0.111 seconds
+[0m11:00:42.758968 [debug] [ThreadPool]: Using snowflake connection "list_DBT_CORTEX_LLMS_ANALYTICS"
+[0m11:00:42.759164 [debug] [ThreadPool]: On list_DBT_CORTEX_LLMS_ANALYTICS: /* {"app": "dbt", "dbt_version": "1.10.1", "profile_name": "dbt_cortex", "target_name": "dev", "connection_name": "list_DBT_CORTEX_LLMS_ANALYTICS"} */
+alter session unset quoted_identifiers_ignore_case;
+[0m11:00:42.830974 [debug] [ThreadPool]: SQL status: SUCCESS 1 in 0.072 seconds
+[0m11:00:43.330480 [debug] [ThreadPool]: SQL status: SUCCESS 4 in 0.615 seconds
+[0m11:00:43.331973 [debug] [ThreadPool]: Using snowflake connection "list_DBT_CORTEX_LLMS_STAGE"
+[0m11:00:43.332249 [debug] [ThreadPool]: On list_DBT_CORTEX_LLMS_STAGE: /* {"app": "dbt", "dbt_version": "1.10.1", "profile_name": "dbt_cortex", "target_name": "dev", "connection_name": "list_DBT_CORTEX_LLMS_STAGE"} */
+alter session unset quoted_identifiers_ignore_case;
+[0m11:00:43.392543 [debug] [ThreadPool]: SQL status: SUCCESS 1 in 0.060 seconds
+[0m11:00:43.394126 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '635ca3b5-f4b5-4388-af32-ccd829d870c5', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x11c5785d0>]}
+[0m11:00:43.398338 [debug] [Thread-1 (]: Began running node model.dbt_cortex.stg_customer_interactions
+[0m11:00:43.398638 [debug] [Thread-2 (]: Began running node model.dbt_cortex.stg_customers
+[0m11:00:43.398878 [debug] [Thread-3 (]: Began running node model.dbt_cortex.stg_product_reviews
+[0m11:00:43.399091 [debug] [Thread-4 (]: Began running node model.dbt_cortex.stg_support_tickets
+[0m11:00:43.399494 [info ] [Thread-1 (]: 1 of 12 START sql view model STAGE.stg_customer_interactions ................... [RUN]
+[0m11:00:43.399874 [info ] [Thread-2 (]: 2 of 12 START sql view model STAGE.stg_customers ............................... [RUN]
+[0m11:00:43.400198 [info ] [Thread-3 (]: 3 of 12 START sql view model STAGE.stg_product_reviews ......................... [RUN]
+[0m11:00:43.400493 [info ] [Thread-4 (]: 4 of 12 START sql view model STAGE.stg_support_tickets ......................... [RUN]
+[0m11:00:43.400833 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly list_DBT_CORTEX_LLMS_ANALYTICS, now model.dbt_cortex.stg_customer_interactions)
+[0m11:00:43.401090 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly list_DBT_CORTEX_LLMS_STAGE, now model.dbt_cortex.stg_customers)
+[0m11:00:43.401369 [debug] [Thread-3 (]: Acquiring new snowflake connection 'model.dbt_cortex.stg_product_reviews'
+[0m11:00:43.401627 [debug] [Thread-4 (]: Acquiring new snowflake connection 'model.dbt_cortex.stg_support_tickets'
+[0m11:00:43.401846 [debug] [Thread-1 (]: Began compiling node model.dbt_cortex.stg_customer_interactions
+[0m11:00:43.402043 [debug] [Thread-2 (]: Began compiling node model.dbt_cortex.stg_customers
+[0m11:00:43.402236 [debug] [Thread-3 (]: Began compiling node model.dbt_cortex.stg_product_reviews
+[0m11:00:43.402428 [debug] [Thread-4 (]: Began compiling node model.dbt_cortex.stg_support_tickets
+[0m11:00:43.407221 [debug] [Thread-1 (]: Writing injected SQL for node "model.dbt_cortex.stg_customer_interactions"
+[0m11:00:43.408838 [debug] [Thread-2 (]: Writing injected SQL for node "model.dbt_cortex.stg_customers"
+[0m11:00:43.410294 [debug] [Thread-3 (]: Writing injected SQL for node "model.dbt_cortex.stg_product_reviews"
+[0m11:00:43.411776 [debug] [Thread-4 (]: Writing injected SQL for node "model.dbt_cortex.stg_support_tickets"
+[0m11:00:43.413084 [debug] [Thread-1 (]: Began executing node model.dbt_cortex.stg_customer_interactions
+[0m11:00:43.413299 [debug] [Thread-3 (]: Began executing node model.dbt_cortex.stg_product_reviews
+[0m11:00:43.413543 [debug] [Thread-4 (]: Began executing node model.dbt_cortex.stg_support_tickets
+[0m11:00:43.413799 [debug] [Thread-2 (]: Began executing node model.dbt_cortex.stg_customers
+[0m11:00:43.429213 [debug] [Thread-1 (]: Writing runtime sql for node "model.dbt_cortex.stg_customer_interactions"
+[0m11:00:43.431090 [debug] [Thread-3 (]: Writing runtime sql for node "model.dbt_cortex.stg_product_reviews"
+[0m11:00:43.432691 [debug] [Thread-4 (]: Writing runtime sql for node "model.dbt_cortex.stg_support_tickets"
+[0m11:00:43.434164 [debug] [Thread-2 (]: Writing runtime sql for node "model.dbt_cortex.stg_customers"
+[0m11:00:43.435522 [debug] [Thread-4 (]: Using snowflake connection "model.dbt_cortex.stg_support_tickets"
+[0m11:00:43.436134 [debug] [Thread-3 (]: Using snowflake connection "model.dbt_cortex.stg_product_reviews"
+[0m11:00:43.436581 [debug] [Thread-2 (]: Using snowflake connection "model.dbt_cortex.stg_customers"
+[0m11:00:43.437120 [debug] [Thread-1 (]: Using snowflake connection "model.dbt_cortex.stg_customer_interactions"
+[0m11:00:43.437370 [debug] [Thread-4 (]: On model.dbt_cortex.stg_support_tickets: /* {"app": "dbt", "dbt_version": "1.10.1", "profile_name": "dbt_cortex", "target_name": "dev", "node_id": "model.dbt_cortex.stg_support_tickets"} */
+create or replace   view DBT_CORTEX_LLMS.STAGE.stg_support_tickets
+  
+   as (
+    -- Staging model for support tickets
+-- This model extracts and standardizes support ticket information from the raw JSON data
+-- Fields are cast to appropriate data types and renamed for clarity
+
+SELECT
+    data:ticket_id::VARCHAR AS ticket_id,
+    data:customer_id::VARCHAR AS customer_id,
+    TRY_TO_TIMESTAMP_NTZ(data:ticket_date::VARCHAR) AS ticket_date,
+    data:ticket_status::VARCHAR AS ticket_status,
+    data:ticket_category::VARCHAR AS ticket_category,
+    data:ticket_description::VARCHAR AS ticket_description
+FROM DBT_CORTEX_LLMS.STAGE.support_tickets
+  );
+[0m11:00:43.437676 [debug] [Thread-3 (]: On model.dbt_cortex.stg_product_reviews: /* {"app": "dbt", "dbt_version": "1.10.1", "profile_name": "dbt_cortex", "target_name": "dev", "node_id": "model.dbt_cortex.stg_product_reviews"} */
+create or replace   view DBT_CORTEX_LLMS.STAGE.stg_product_reviews
+  
+   as (
+    -- Staging model for product reviews
+-- This model extracts and standardizes product review information from the raw JSON data
+-- Fields are cast to appropriate data types and renamed for clarity
+
+SELECT
+    data:review_id::VARCHAR AS review_id,
+    data:customer_id::VARCHAR AS customer_id,
+    data:product_id::VARCHAR AS product_id,
+    TRY_TO_TIMESTAMP_NTZ(data:review_date::VARCHAR) AS review_date,
+    data:review_rating::NUMBER AS review_rating,
+    data:review_text::VARCHAR AS review_text,
+    data:review_language::VARCHAR AS review_language
+FROM DBT_CORTEX_LLMS.STAGE.product_reviews
+  );
+[0m11:00:43.438072 [debug] [Thread-2 (]: On model.dbt_cortex.stg_customers: /* {"app": "dbt", "dbt_version": "1.10.1", "profile_name": "dbt_cortex", "target_name": "dev", "node_id": "model.dbt_cortex.stg_customers"} */
+create or replace   view DBT_CORTEX_LLMS.STAGE.stg_customers
+  
+   as (
+    -- Staging model for customer data
+-- This model extracts and standardizes customer information from the raw JSON data
+-- Fields are cast to appropriate data types and renamed for clarity
+
+SELECT
+    data:customer_id::VARCHAR AS customer_id,
+    data:persona::VARCHAR AS persona,
+    TRY_TO_DATE(data:sign_up_date::VARCHAR) AS sign_up_date,
+    data:products_owned::NUMBER AS products_owned,
+    data:lifetime_value::NUMBER AS lifetime_value
+FROM DBT_CORTEX_LLMS.STAGE.customers
+  );
+[0m11:00:43.438355 [debug] [Thread-1 (]: On model.dbt_cortex.stg_customer_interactions: /* {"app": "dbt", "dbt_version": "1.10.1", "profile_name": "dbt_cortex", "target_name": "dev", "node_id": "model.dbt_cortex.stg_customer_interactions"} */
+create or replace   view DBT_CORTEX_LLMS.STAGE.stg_customer_interactions
+  
+   as (
+    -- Staging model for customer interactions
+-- This model extracts and standardizes customer interaction information from the raw JSON data
+-- Fields are cast to appropriate data types and renamed for clarity
+
+SELECT
+    data:interaction_id::VARCHAR AS interaction_id,
+    data:customer_id::VARCHAR AS customer_id,
+    TRY_TO_TIMESTAMP_NTZ(data:interaction_date::VARCHAR) AS interaction_date,
+    data:agent_id::VARCHAR AS agent_id,
+    data:interaction_type::VARCHAR AS interaction_type,
+    data:interaction_notes::VARCHAR AS interaction_notes
+FROM DBT_CORTEX_LLMS.STAGE.customer_interactions
+  );
+[0m11:00:43.438672 [debug] [Thread-4 (]: Opening a new connection, currently in state init
+[0m11:00:43.438942 [debug] [Thread-3 (]: Opening a new connection, currently in state init
+[0m11:00:43.762125 [debug] [Thread-1 (]: SQL status: SUCCESS 1 in 0.323 seconds
+[0m11:00:43.775224 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '635ca3b5-f4b5-4388-af32-ccd829d870c5', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x11e3ebd50>]}
+[0m11:00:43.775737 [info ] [Thread-1 (]: 1 of 12 OK created sql view model STAGE.stg_customer_interactions .............. [[32mSUCCESS 1[0m in 0.37s]
+[0m11:00:43.776084 [debug] [Thread-1 (]: Finished running node model.dbt_cortex.stg_customer_interactions
+[0m11:00:43.776438 [debug] [Thread-1 (]: Began running node model.dbt_cortex.fact_customer_interactions
+[0m11:00:43.776695 [info ] [Thread-1 (]: 5 of 12 START sql table model ANALYTICS.fact_customer_interactions ............. [RUN]
+[0m11:00:43.777120 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly model.dbt_cortex.stg_customer_interactions, now model.dbt_cortex.fact_customer_interactions)
+[0m11:00:43.777323 [debug] [Thread-1 (]: Began compiling node model.dbt_cortex.fact_customer_interactions
+[0m11:00:43.779035 [debug] [Thread-1 (]: Writing injected SQL for node "model.dbt_cortex.fact_customer_interactions"
+[0m11:00:43.779884 [debug] [Thread-1 (]: Began executing node model.dbt_cortex.fact_customer_interactions
+[0m11:00:43.793468 [debug] [Thread-1 (]: Writing runtime sql for node "model.dbt_cortex.fact_customer_interactions"
+[0m11:00:43.794635 [debug] [Thread-1 (]: Using snowflake connection "model.dbt_cortex.fact_customer_interactions"
+[0m11:00:43.794999 [debug] [Thread-1 (]: On model.dbt_cortex.fact_customer_interactions: /* {"app": "dbt", "dbt_version": "1.10.1", "profile_name": "dbt_cortex", "target_name": "dev", "node_id": "model.dbt_cortex.fact_customer_interactions"} */
+create or replace transient table DBT_CORTEX_LLMS.ANALYTICS.fact_customer_interactions
+    
+
+    
+    as (-- Fact model for customer interactions with sentiment analysis
+-- This model enriches customer interactions with AI-generated sentiment scores
+-- Uses Snowflake Cortex for sentiment analysis
+
+SELECT
+    i.interaction_id,
+    i.customer_id,
+    i.interaction_date,
+    i.agent_id,
+    i.interaction_type,
+    i.interaction_notes,
+    -- Add sentiment analysis using Snowflake Cortex
+    SNOWFLAKE.CORTEX.SENTIMENT(i.interaction_notes) AS sentiment_score
+FROM DBT_CORTEX_LLMS.STAGE.stg_customer_interactions i
+WHERE i.interaction_notes IS NOT NULL
+    )
+;
+[0m11:00:44.023683 [debug] [Thread-3 (]: SQL status: SUCCESS 1 in 0.585 seconds
+[0m11:00:44.025511 [debug] [Thread-3 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '635ca3b5-f4b5-4388-af32-ccd829d870c5', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x11e37cb10>]}
+[0m11:00:44.026112 [info ] [Thread-3 (]: 3 of 12 OK created sql view model STAGE.stg_product_reviews .................... [[32mSUCCESS 1[0m in 0.62s]
+[0m11:00:44.026616 [debug] [Thread-3 (]: Finished running node model.dbt_cortex.stg_product_reviews
+[0m11:00:44.027150 [debug] [Thread-3 (]: Began running node model.dbt_cortex.fact_product_reviews
+[0m11:00:44.027632 [info ] [Thread-3 (]: 6 of 12 START sql table model ANALYTICS.fact_product_reviews ................... [RUN]
+[0m11:00:44.028049 [debug] [Thread-3 (]: Re-using an available connection from the pool (formerly model.dbt_cortex.stg_product_reviews, now model.dbt_cortex.fact_product_reviews)
+[0m11:00:44.028297 [debug] [Thread-3 (]: Began compiling node model.dbt_cortex.fact_product_reviews
+[0m11:00:44.030948 [debug] [Thread-3 (]: Writing injected SQL for node "model.dbt_cortex.fact_product_reviews"
+[0m11:00:44.031853 [debug] [Thread-3 (]: Began executing node model.dbt_cortex.fact_product_reviews
+[0m11:00:44.033684 [debug] [Thread-3 (]: Writing runtime sql for node "model.dbt_cortex.fact_product_reviews"
+[0m11:00:44.035419 [debug] [Thread-3 (]: Using snowflake connection "model.dbt_cortex.fact_product_reviews"
+[0m11:00:44.035779 [debug] [Thread-3 (]: On model.dbt_cortex.fact_product_reviews: /* {"app": "dbt", "dbt_version": "1.10.1", "profile_name": "dbt_cortex", "target_name": "dev", "node_id": "model.dbt_cortex.fact_product_reviews"} */
+create or replace transient table DBT_CORTEX_LLMS.ANALYTICS.fact_product_reviews
+    
+
+    
+    as (-- Fact model for product reviews with sentiment analysis and translations
+-- This model enriches product reviews with AI-generated sentiment scores and translations
+-- Uses Snowflake Cortex for sentiment analysis and translation
+
+SELECT
+    r.review_id,
+    r.customer_id,
+    r.product_id,
+    r.review_date,
+    r.review_rating,
+    r.review_text,
+    r.review_language,
+    -- Add sentiment analysis
+    SNOWFLAKE.CORTEX.SENTIMENT(r.review_text) AS sentiment_score,
+    -- Add standardized text with translations
+    CASE
+        WHEN CONTAINS(LOWER(r.review_language), 'german') THEN SNOWFLAKE.CORTEX.TRANSLATE(r.review_text, 'de', 'en')
+        WHEN CONTAINS(LOWER(r.review_language), 'french') THEN SNOWFLAKE.CORTEX.TRANSLATE(r.review_text, 'fr', 'en')
+        WHEN CONTAINS(LOWER(r.review_language), 'spanish') THEN SNOWFLAKE.CORTEX.TRANSLATE(r.review_text, 'es', 'en')
+        WHEN CONTAINS(LOWER(r.review_language), 'italian') THEN SNOWFLAKE.CORTEX.TRANSLATE(r.review_text, 'it', 'en')
+        WHEN CONTAINS(LOWER(r.review_language), 'portuguese') THEN SNOWFLAKE.CORTEX.TRANSLATE(r.review_text, 'pt', 'en')
+        WHEN CONTAINS(LOWER(r.review_language), 'chinese') THEN SNOWFLAKE.CORTEX.TRANSLATE(r.review_text, 'zh', 'en')
+        WHEN CONTAINS(LOWER(r.review_language), 'japanese') THEN SNOWFLAKE.CORTEX.TRANSLATE(r.review_text, 'ja', 'en')
+        WHEN CONTAINS(LOWER(r.review_language), 'korean') THEN SNOWFLAKE.CORTEX.TRANSLATE(r.review_text, 'ko', 'en')
+        WHEN CONTAINS(LOWER(r.review_language), 'russian') THEN SNOWFLAKE.CORTEX.TRANSLATE(r.review_text, 'ru', 'en')
+        WHEN CONTAINS(LOWER(r.review_language), 'arabic') THEN SNOWFLAKE.CORTEX.TRANSLATE(r.review_text, 'ar', 'en')
+        ELSE r.review_text
+    END AS review_text_english
+FROM DBT_CORTEX_LLMS.STAGE.stg_product_reviews r
+WHERE r.review_text IS NOT NULL
+    )
+;
+[0m11:00:44.117525 [debug] [Thread-2 (]: SQL status: SUCCESS 1 in 0.678 seconds
+[0m11:00:44.119119 [debug] [Thread-2 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '635ca3b5-f4b5-4388-af32-ccd829d870c5', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x11e340790>]}
+[0m11:00:44.119562 [info ] [Thread-2 (]: 2 of 12 OK created sql view model STAGE.stg_customers .......................... [[32mSUCCESS 1[0m in 0.72s]
+[0m11:00:44.119950 [debug] [Thread-2 (]: Finished running node model.dbt_cortex.stg_customers
+[0m11:00:44.378665 [debug] [Thread-4 (]: SQL status: SUCCESS 1 in 0.940 seconds
+[0m11:00:44.380191 [debug] [Thread-4 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '635ca3b5-f4b5-4388-af32-ccd829d870c5', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x11e42f8d0>]}
+[0m11:00:44.380670 [info ] [Thread-4 (]: 4 of 12 OK created sql view model STAGE.stg_support_tickets .................... [[32mSUCCESS 1[0m in 0.98s]
+[0m11:00:44.381029 [debug] [Thread-4 (]: Finished running node model.dbt_cortex.stg_support_tickets
+[0m11:00:44.381599 [debug] [Thread-2 (]: Began running node model.dbt_cortex.fact_support_tickets
+[0m11:00:44.381949 [info ] [Thread-2 (]: 7 of 12 START sql table model ANALYTICS.fact_support_tickets ................... [RUN]
+[0m11:00:44.382250 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly model.dbt_cortex.stg_customers, now model.dbt_cortex.fact_support_tickets)
+[0m11:00:44.382468 [debug] [Thread-2 (]: Began compiling node model.dbt_cortex.fact_support_tickets
+[0m11:00:44.384539 [debug] [Thread-2 (]: Writing injected SQL for node "model.dbt_cortex.fact_support_tickets"
+[0m11:00:44.385299 [debug] [Thread-2 (]: Began executing node model.dbt_cortex.fact_support_tickets
+[0m11:00:44.387117 [debug] [Thread-2 (]: Writing runtime sql for node "model.dbt_cortex.fact_support_tickets"
+[0m11:00:44.388627 [debug] [Thread-2 (]: Using snowflake connection "model.dbt_cortex.fact_support_tickets"
+[0m11:00:44.388969 [debug] [Thread-2 (]: On model.dbt_cortex.fact_support_tickets: /* {"app": "dbt", "dbt_version": "1.10.1", "profile_name": "dbt_cortex", "target_name": "dev", "node_id": "model.dbt_cortex.fact_support_tickets"} */
+create or replace transient table DBT_CORTEX_LLMS.ANALYTICS.fact_support_tickets
+    
+
+    
+    as (-- Fact model for support tickets with sentiment analysis and priority classification
+-- This model enriches support tickets with AI-generated sentiment scores and priority levels
+-- Uses Snowflake Cortex for sentiment analysis and text classification
+
+SELECT
+    t.ticket_id,
+    t.customer_id,
+    t.ticket_date,
+    t.ticket_status,
+    t.ticket_category,
+    t.ticket_description,
+    -- Add sentiment analysis
+    SNOWFLAKE.CORTEX.SENTIMENT(t.ticket_description) AS sentiment_score,
+    -- Add priority classification
+    SNOWFLAKE.CORTEX.CLASSIFY_TEXT(
+        t.ticket_description,
+        [
+            {
+                'label': 'Critical',
+                'description': 'Requires immediate attention and resolution',
+                'examples': [
+                    'System is down and customers cannot place orders',
+                    'Security breach detected',
+                    'Payment processing completely stopped',
+                    'All users locked out of the system'
+                ]
+            },
+            {
+                'label': 'High',
+                'description': 'Should be resolved within 24 hours',
+                'examples': [
+                    'Customer cannot complete checkout',
+                    'Order status stuck in processing',
+                    'Unable to access account',
+                    'Payment failed for multiple customers'
+                ]
+            },
+            {
+                'label': 'Medium',
+                'description': 'Should be resolved within 3 days',
+                'examples': [
+                    'Product image not displaying correctly',
+                    'Slow response times in certain areas',
+                    'Minor UI issues',
+                    'Account settings not saving'
+                ]
+            },
+            {
+                'label': 'Low',
+                'description': 'Can be handled in regular queue',
+                'examples': [
+                    'General product questions',
+                    'Feature request',
+                    'UI enhancement suggestion',
+                    'Documentation clarification'
+                ]
+            }
+        ],
+        {
+            'task_description': 'Classify the urgency level of this support ticket based on its description'
+        }
+    )['label'] AS priority_level,
+    -- Add customer expectations
+    SNOWFLAKE.CORTEX.COMPLETE(
+        'claude-4-sonnet',
+        'What specific timeframe or deadline does the customer mention or expect for resolution? ' || t.ticket_description
+    ) AS expected_resolution_timeframe,
+    SNOWFLAKE.CORTEX.COMPLETE(
+        'claude-4-sonnet',
+        'What compensation, refund, or specific remedy is the customer seeking? ' || t.ticket_description
+    ) AS requested_remedy
+FROM DBT_CORTEX_LLMS.STAGE.stg_support_tickets t
+WHERE t.ticket_description IS NOT NULL
+    )
+;
+[0m11:00:46.368658 [debug] [Thread-1 (]: SQL status: SUCCESS 1 in 2.573 seconds
+[0m11:00:46.370168 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '635ca3b5-f4b5-4388-af32-ccd829d870c5', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x11e3f4790>]}
+[0m11:00:46.370625 [info ] [Thread-1 (]: 5 of 12 OK created sql table model ANALYTICS.fact_customer_interactions ........ [[32mSUCCESS 1[0m in 2.59s]
+[0m11:00:46.370940 [debug] [Thread-1 (]: Finished running node model.dbt_cortex.fact_customer_interactions
+[0m11:01:04.689920 [debug] [Thread-3 (]: SQL status: SUCCESS 1 in 20.654 seconds
+[0m11:01:04.693910 [debug] [Thread-3 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '635ca3b5-f4b5-4388-af32-ccd829d870c5', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x11e391e10>]}
+[0m11:01:04.694840 [info ] [Thread-3 (]: 6 of 12 OK created sql table model ANALYTICS.fact_product_reviews .............. [[32mSUCCESS 1[0m in 20.67s]
+[0m11:01:04.695705 [debug] [Thread-3 (]: Finished running node model.dbt_cortex.fact_product_reviews
+[0m11:01:34.385620 [debug] [Thread-2 (]: SQL status: SUCCESS 1 in 49.996 seconds
+[0m11:01:34.390149 [debug] [Thread-2 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '635ca3b5-f4b5-4388-af32-ccd829d870c5', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x11e3419d0>]}
+[0m11:01:34.391206 [info ] [Thread-2 (]: 7 of 12 OK created sql table model ANALYTICS.fact_support_tickets .............. [[32mSUCCESS 1[0m in 50.01s]
+[0m11:01:34.391869 [debug] [Thread-2 (]: Finished running node model.dbt_cortex.fact_support_tickets
+[0m11:01:34.393255 [debug] [Thread-4 (]: Began running node model.dbt_cortex.insight_summaries
+[0m11:01:34.393827 [debug] [Thread-1 (]: Began running node model.dbt_cortex.sentiment_analysis
+[0m11:01:34.394388 [debug] [Thread-3 (]: Began running node model.dbt_cortex.ticket_patterns
+[0m11:01:34.395062 [info ] [Thread-4 (]: 8 of 12 START sql table model ANALYTICS.insight_summaries ...................... [RUN]
+[0m11:01:34.395977 [info ] [Thread-1 (]: 9 of 12 START sql table model ANALYTICS.sentiment_analysis ..................... [RUN]
+[0m11:01:34.396830 [info ] [Thread-3 (]: 10 of 12 START sql table model ANALYTICS.ticket_patterns ....................... [RUN]
+[0m11:01:34.398005 [debug] [Thread-4 (]: Re-using an available connection from the pool (formerly model.dbt_cortex.stg_support_tickets, now model.dbt_cortex.insight_summaries)
+[0m11:01:34.398685 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly model.dbt_cortex.fact_customer_interactions, now model.dbt_cortex.sentiment_analysis)
+[0m11:01:34.399131 [debug] [Thread-3 (]: Re-using an available connection from the pool (formerly model.dbt_cortex.fact_product_reviews, now model.dbt_cortex.ticket_patterns)
+[0m11:01:34.399545 [debug] [Thread-4 (]: Began compiling node model.dbt_cortex.insight_summaries
+[0m11:01:34.399919 [debug] [Thread-1 (]: Began compiling node model.dbt_cortex.sentiment_analysis
+[0m11:01:34.400249 [debug] [Thread-3 (]: Began compiling node model.dbt_cortex.ticket_patterns
+[0m11:01:34.403887 [debug] [Thread-4 (]: Writing injected SQL for node "model.dbt_cortex.insight_summaries"
+[0m11:01:34.408196 [debug] [Thread-1 (]: Writing injected SQL for node "model.dbt_cortex.sentiment_analysis"
+[0m11:01:34.410234 [debug] [Thread-3 (]: Writing injected SQL for node "model.dbt_cortex.ticket_patterns"
+[0m11:01:34.411836 [debug] [Thread-3 (]: Began executing node model.dbt_cortex.ticket_patterns
+[0m11:01:34.412206 [debug] [Thread-4 (]: Began executing node model.dbt_cortex.insight_summaries
+[0m11:01:34.412502 [debug] [Thread-1 (]: Began executing node model.dbt_cortex.sentiment_analysis
+[0m11:01:34.414847 [debug] [Thread-3 (]: Writing runtime sql for node "model.dbt_cortex.ticket_patterns"
+[0m11:01:34.417270 [debug] [Thread-4 (]: Writing runtime sql for node "model.dbt_cortex.insight_summaries"
+[0m11:01:34.419089 [debug] [Thread-1 (]: Writing runtime sql for node "model.dbt_cortex.sentiment_analysis"
+[0m11:01:34.420802 [debug] [Thread-1 (]: Using snowflake connection "model.dbt_cortex.sentiment_analysis"
+[0m11:01:34.421560 [debug] [Thread-3 (]: Using snowflake connection "model.dbt_cortex.ticket_patterns"
+[0m11:01:34.422564 [debug] [Thread-4 (]: Using snowflake connection "model.dbt_cortex.insight_summaries"
+[0m11:01:34.422979 [debug] [Thread-1 (]: On model.dbt_cortex.sentiment_analysis: /* {"app": "dbt", "dbt_version": "1.10.1", "profile_name": "dbt_cortex", "target_name": "dev", "node_id": "model.dbt_cortex.sentiment_analysis"} */
+create or replace transient table DBT_CORTEX_LLMS.ANALYTICS.sentiment_analysis
+    
+
+    
+    as (-- Sentiment analysis model that combines sentiment from all sources
+-- This model aggregates sentiment scores from interactions, reviews, and tickets
+-- Provides a unified view of customer sentiment across all touchpoints
+
+WITH interaction_sentiment AS (
+    SELECT
+        customer_id,
+        interaction_date,
+        sentiment_score,
+        'interaction' AS source_type
+    FROM DBT_CORTEX_LLMS.ANALYTICS.fact_customer_interactions
+),
+review_sentiment AS (
+    SELECT
+        customer_id,
+        review_date AS interaction_date,
+        sentiment_score,
+        'review' AS source_type
+    FROM DBT_CORTEX_LLMS.ANALYTICS.fact_product_reviews
+),
+ticket_sentiment AS (
+    SELECT
+        customer_id,
+        ticket_date AS interaction_date,
+        sentiment_score,
+        'ticket' AS source_type
+    FROM DBT_CORTEX_LLMS.ANALYTICS.fact_support_tickets
+)
+SELECT * FROM interaction_sentiment
+UNION ALL
+SELECT * FROM review_sentiment
+UNION ALL
+SELECT * FROM ticket_sentiment
+    )
+;
+[0m11:01:34.423368 [debug] [Thread-3 (]: On model.dbt_cortex.ticket_patterns: /* {"app": "dbt", "dbt_version": "1.10.1", "profile_name": "dbt_cortex", "target_name": "dev", "node_id": "model.dbt_cortex.ticket_patterns"} */
+create or replace transient table DBT_CORTEX_LLMS.ANALYTICS.ticket_patterns
+    
+
+    
+    as (-- Ticket patterns model that analyzes support ticket patterns
+-- This model aggregates ticket information to identify patterns and trends
+-- Uses array aggregation to track ticket categories and priorities over time
+
+SELECT
+    customer_id,
+    COUNT(*) AS ticket_count,
+    MIN(ticket_date) AS first_ticket_date,
+    MAX(ticket_date) AS most_recent_ticket_date,
+    ARRAY_AGG(ticket_category) WITHIN GROUP (ORDER BY ticket_date) AS ticket_categories,
+    ARRAY_AGG(priority_level) WITHIN GROUP (ORDER BY ticket_date) AS ticket_priorities
+FROM DBT_CORTEX_LLMS.ANALYTICS.fact_support_tickets
+GROUP BY customer_id
+    )
+;
+[0m11:01:34.423772 [debug] [Thread-4 (]: On model.dbt_cortex.insight_summaries: /* {"app": "dbt", "dbt_version": "1.10.1", "profile_name": "dbt_cortex", "target_name": "dev", "node_id": "model.dbt_cortex.insight_summaries"} */
+create or replace transient table DBT_CORTEX_LLMS.ANALYTICS.insight_summaries
+    
+
+    
+    as (-- Insight summaries model that generates AI summaries of customer interactions
+-- This model uses Snowflake Cortex to generate concise summaries of customer behavior
+-- Combines information from all interaction types into a single summary
+
+SELECT
+    customer_id,
+    SNOWFLAKE.CORTEX.COMPLETE(
+        'claude-4-sonnet',
+        [
+            {
+                'role': 'user',
+                'content': 'Summarize the following customer interactions in 100 words or less: ' || 
+                ARRAY_TO_STRING(
+                    ARRAY_AGG(
+                        CASE
+                            WHEN interaction_notes IS NOT NULL THEN interaction_notes
+                            WHEN review_text IS NOT NULL THEN review_text
+                            WHEN ticket_description IS NOT NULL THEN ticket_description
+                        END
+                    ),
+                    ' | '
+                )
+            }
+        ],
+        {
+            'max_tokens': 100
+        }
+    ) AS customer_summary
+FROM (
+    SELECT customer_id, interaction_notes, NULL as review_text, NULL as ticket_description
+    FROM DBT_CORTEX_LLMS.ANALYTICS.fact_customer_interactions
+    UNION ALL
+    SELECT customer_id, NULL, review_text, NULL
+    FROM DBT_CORTEX_LLMS.ANALYTICS.fact_product_reviews
+    UNION ALL
+    SELECT customer_id, NULL, NULL, ticket_description
+    FROM DBT_CORTEX_LLMS.ANALYTICS.fact_support_tickets
+)
+GROUP BY customer_id
+    )
+;
+[0m11:01:35.102525 [debug] [Thread-3 (]: SQL status: SUCCESS 1 in 0.678 seconds
+[0m11:01:35.104999 [debug] [Thread-3 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '635ca3b5-f4b5-4388-af32-ccd829d870c5', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x11e4b7690>]}
+[0m11:01:35.105510 [info ] [Thread-3 (]: 10 of 12 OK created sql table model ANALYTICS.ticket_patterns .................. [[32mSUCCESS 1[0m in 0.71s]
+[0m11:01:35.105867 [debug] [Thread-3 (]: Finished running node model.dbt_cortex.ticket_patterns
+[0m11:01:35.927648 [debug] [Thread-1 (]: SQL status: SUCCESS 1 in 1.503 seconds
+[0m11:01:35.930284 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '635ca3b5-f4b5-4388-af32-ccd829d870c5', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x11e4568d0>]}
+[0m11:01:35.931028 [info ] [Thread-1 (]: 9 of 12 OK created sql table model ANALYTICS.sentiment_analysis ................ [[32mSUCCESS 1[0m in 1.53s]
+[0m11:01:35.931596 [debug] [Thread-1 (]: Finished running node model.dbt_cortex.sentiment_analysis
+[0m11:01:35.932309 [debug] [Thread-2 (]: Began running node model.dbt_cortex.sentiment_trends
+[0m11:01:35.932989 [info ] [Thread-2 (]: 11 of 12 START sql table model ANALYTICS.sentiment_trends ...................... [RUN]
+[0m11:01:35.933499 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly model.dbt_cortex.fact_support_tickets, now model.dbt_cortex.sentiment_trends)
+[0m11:01:35.933825 [debug] [Thread-2 (]: Began compiling node model.dbt_cortex.sentiment_trends
+[0m11:01:35.936924 [debug] [Thread-2 (]: Writing injected SQL for node "model.dbt_cortex.sentiment_trends"
+[0m11:01:35.938243 [debug] [Thread-2 (]: Began executing node model.dbt_cortex.sentiment_trends
+[0m11:01:35.940854 [debug] [Thread-2 (]: Writing runtime sql for node "model.dbt_cortex.sentiment_trends"
+[0m11:01:35.942928 [debug] [Thread-2 (]: Using snowflake connection "model.dbt_cortex.sentiment_trends"
+[0m11:01:35.943468 [debug] [Thread-2 (]: On model.dbt_cortex.sentiment_trends: /* {"app": "dbt", "dbt_version": "1.10.1", "profile_name": "dbt_cortex", "target_name": "dev", "node_id": "model.dbt_cortex.sentiment_trends"} */
+create or replace transient table DBT_CORTEX_LLMS.ANALYTICS.sentiment_trends
+    
+
+    
+    as (-- Sentiment trends model that analyzes sentiment patterns over time
+-- This model calculates sentiment trends, volatility, and historical patterns
+-- Uses window functions to track changes in sentiment over time
+
+WITH sentiment_data AS (
+    SELECT
+        customer_id,
+        sentiment_score,
+        interaction_date,
+        FIRST_VALUE(sentiment_score) OVER (PARTITION BY customer_id ORDER BY interaction_date) AS first_sentiment,
+        LAST_VALUE(sentiment_score) OVER (PARTITION BY customer_id ORDER BY interaction_date 
+                                         ROWS BETWEEN UNBOUNDED PRECEDING AND UNBOUNDED FOLLOWING) AS last_sentiment
+    FROM DBT_CORTEX_LLMS.ANALYTICS.sentiment_analysis
+)
+SELECT
+    customer_id,
+    ARRAY_AGG(sentiment_score) WITHIN GROUP (ORDER BY interaction_date) AS sentiment_history,
+    AVG(sentiment_score) AS avg_sentiment,
+    MIN(sentiment_score) AS min_sentiment,
+    MAX(sentiment_score) AS max_sentiment,
+    MAX(sentiment_score) - MIN(sentiment_score) AS sentiment_volatility,
+    CASE
+        WHEN COUNT(*) > 1 THEN 
+            MAX(last_sentiment) - MAX(first_sentiment)
+        ELSE 0
+    END AS sentiment_trend
+FROM sentiment_data
+GROUP BY customer_id
+    )
+;
+[0m11:01:37.116605 [debug] [Thread-2 (]: SQL status: SUCCESS 1 in 1.173 seconds
+[0m11:01:37.118029 [debug] [Thread-2 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '635ca3b5-f4b5-4388-af32-ccd829d870c5', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x11e45ad90>]}
+[0m11:01:37.118431 [info ] [Thread-2 (]: 11 of 12 OK created sql table model ANALYTICS.sentiment_trends ................. [[32mSUCCESS 1[0m in 1.18s]
+[0m11:01:37.118768 [debug] [Thread-2 (]: Finished running node model.dbt_cortex.sentiment_trends
+[0m11:02:21.238744 [debug] [Thread-4 (]: SQL status: SUCCESS 1 in 46.813 seconds
+[0m11:02:21.243188 [debug] [Thread-4 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '635ca3b5-f4b5-4388-af32-ccd829d870c5', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x11c74ec50>]}
+[0m11:02:21.244025 [info ] [Thread-4 (]: 8 of 12 OK created sql table model ANALYTICS.insight_summaries ................. [[32mSUCCESS 1[0m in 46.85s]
+[0m11:02:21.244559 [debug] [Thread-4 (]: Finished running node model.dbt_cortex.insight_summaries
+[0m11:02:21.246459 [debug] [Thread-1 (]: Began running node model.dbt_cortex.customer_persona_signals
+[0m11:02:21.247088 [info ] [Thread-1 (]: 12 of 12 START sql table model ANALYTICS.customer_persona_signals .............. [RUN]
+[0m11:02:21.247550 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly model.dbt_cortex.sentiment_analysis, now model.dbt_cortex.customer_persona_signals)
+[0m11:02:21.247868 [debug] [Thread-1 (]: Began compiling node model.dbt_cortex.customer_persona_signals
+[0m11:02:21.252414 [debug] [Thread-1 (]: Writing injected SQL for node "model.dbt_cortex.customer_persona_signals"
+[0m11:02:21.254067 [debug] [Thread-1 (]: Began executing node model.dbt_cortex.customer_persona_signals
+[0m11:02:21.257386 [debug] [Thread-1 (]: Writing runtime sql for node "model.dbt_cortex.customer_persona_signals"
+[0m11:02:21.260422 [debug] [Thread-1 (]: Using snowflake connection "model.dbt_cortex.customer_persona_signals"
+[0m11:02:21.260964 [debug] [Thread-1 (]: On model.dbt_cortex.customer_persona_signals: /* {"app": "dbt", "dbt_version": "1.10.1", "profile_name": "dbt_cortex", "target_name": "dev", "node_id": "model.dbt_cortex.customer_persona_signals"} */
+create or replace transient table DBT_CORTEX_LLMS.ANALYTICS.customer_persona_signals
+    
+
+    
+    as (-- Customer persona signals model that analyzes customer behavior patterns
+-- This model combines various signals to classify customer personas and predict behavior
+-- Uses sentiment analysis, support history, and other metrics to create customer profiles
+
+SELECT 
+    cb.customer_id,
+    
+    -- Base customer information
+    cb.persona,
+    cb.sign_up_date,
+    cb.products_owned,
+    cb.lifetime_value,
+    
+    -- Sentiment analysis
+    st.avg_sentiment,
+    st.sentiment_trend,
+    st.sentiment_volatility,
+    CASE 
+        WHEN st.avg_sentiment < -0.3 THEN 'Negative'
+        WHEN st.avg_sentiment > 0.3 THEN 'Positive'
+        ELSE 'Neutral'
+    END AS overall_sentiment,
+    
+    -- Support history
+    tpat.ticket_count,
+    tpat.ticket_categories,
+    tpat.ticket_priorities,
+    
+    -- Review ratings
+    AVG(pr.review_rating) AS avg_rating,
+    
+    -- Customer summary
+    is_summary.customer_summary,
+    
+    -- Customer persona
+    CASE
+        WHEN st.avg_sentiment > 0.5 AND COALESCE(tpat.ticket_count, 0) <= 1 THEN 'Satisfied'
+        WHEN st.avg_sentiment < -0.1 AND COALESCE(tpat.ticket_count, 0) >= 1 THEN 'Frustrated'
+        WHEN st.sentiment_volatility > 0.95 THEN 'Mixed'
+        WHEN st.sentiment_trend > 0.3 THEN 'Improving'
+        WHEN st.sentiment_trend < -0.3 THEN 'Deteriorating'
+        ELSE 'Neutral'
+    END AS derived_persona,
+    
+    -- Churn risk
+    CASE
+        WHEN st.avg_sentiment < -0.1 AND COALESCE(tpat.ticket_count, 0) >= 1 THEN 'High'
+        WHEN st.avg_sentiment < -0.05 THEN 'High'
+        WHEN st.avg_sentiment < 0 OR (COALESCE(tpat.ticket_count, 0) >= 1 AND st.sentiment_trend < 0) THEN 'Medium'
+        WHEN st.sentiment_trend < 0 THEN 'Medium'
+        ELSE 'Low'
+    END AS churn_risk,
+    
+    -- Upsell opportunity
+    CASE
+        WHEN st.avg_sentiment > 0.3 AND COALESCE(tpat.ticket_count, 0) <= 1 THEN 'High'
+        WHEN st.sentiment_trend > 0.3 THEN 'Medium'
+        ELSE 'Low'
+    END AS upsell_opportunity
+FROM DBT_CORTEX_LLMS.STAGE.stg_customers cb
+LEFT JOIN DBT_CORTEX_LLMS.ANALYTICS.sentiment_trends st USING (customer_id)
+LEFT JOIN DBT_CORTEX_LLMS.ANALYTICS.insight_summaries is_summary USING (customer_id)
+LEFT JOIN DBT_CORTEX_LLMS.ANALYTICS.ticket_patterns tpat USING (customer_id)
+LEFT JOIN DBT_CORTEX_LLMS.ANALYTICS.fact_product_reviews pr USING (customer_id)
+GROUP BY 
+    cb.customer_id,
+    cb.persona,
+    cb.sign_up_date,
+    cb.products_owned,
+    cb.lifetime_value,
+    st.avg_sentiment, 
+    st.sentiment_trend, 
+    st.sentiment_volatility,
+    tpat.ticket_count,
+    tpat.ticket_categories,
+    tpat.ticket_priorities,
+    is_summary.customer_summary
+    )
+;
+[0m11:02:22.786587 [debug] [Thread-1 (]: SQL status: SUCCESS 1 in 1.525 seconds
+[0m11:02:22.788873 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '635ca3b5-f4b5-4388-af32-ccd829d870c5', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x11e80f950>]}
+[0m11:02:22.789633 [info ] [Thread-1 (]: 12 of 12 OK created sql table model ANALYTICS.customer_persona_signals ......... [[32mSUCCESS 1[0m in 1.54s]
+[0m11:02:22.790104 [debug] [Thread-1 (]: Finished running node model.dbt_cortex.customer_persona_signals
+[0m11:02:22.794783 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m11:02:22.796334 [debug] [MainThread]: Connection 'model.dbt_cortex.customer_persona_signals' was left open.
+[0m11:02:22.797248 [debug] [MainThread]: On model.dbt_cortex.customer_persona_signals: Close
+[0m11:02:22.868956 [debug] [MainThread]: Connection 'model.dbt_cortex.sentiment_trends' was left open.
+[0m11:02:22.869408 [debug] [MainThread]: On model.dbt_cortex.sentiment_trends: Close
+[0m11:02:22.933487 [debug] [MainThread]: Connection 'model.dbt_cortex.ticket_patterns' was left open.
+[0m11:02:22.933948 [debug] [MainThread]: On model.dbt_cortex.ticket_patterns: Close
+[0m11:02:22.987483 [debug] [MainThread]: Connection 'model.dbt_cortex.insight_summaries' was left open.
+[0m11:02:22.988038 [debug] [MainThread]: On model.dbt_cortex.insight_summaries: Close
+[0m11:02:23.079776 [info ] [MainThread]: 
+[0m11:02:23.080309 [info ] [MainThread]: Finished running 8 table models, 4 view models in 0 hours 1 minutes and 41.53 seconds (101.53s).
+[0m11:02:23.081773 [debug] [MainThread]: Command end result
+[0m11:02:23.113548 [debug] [MainThread]: Wrote artifact WritableManifest to /Users/axross/Snowflake/QuickStarts/dbt_cortex_analytics/dbt/target/manifest.json
+[0m11:02:23.116451 [debug] [MainThread]: Wrote artifact SemanticManifest to /Users/axross/Snowflake/QuickStarts/dbt_cortex_analytics/dbt/target/semantic_manifest.json
+[0m11:02:23.122856 [debug] [MainThread]: Wrote artifact RunExecutionResult to /Users/axross/Snowflake/QuickStarts/dbt_cortex_analytics/dbt/target/run_results.json
+[0m11:02:23.123145 [info ] [MainThread]: 
+[0m11:02:23.123440 [info ] [MainThread]: [32mCompleted successfully[0m
+[0m11:02:23.123661 [info ] [MainThread]: 
+[0m11:02:23.123899 [info ] [MainThread]: Done. PASS=12 WARN=0 ERROR=0 SKIP=0 NO-OP=0 TOTAL=12
+[0m11:02:23.133928 [debug] [MainThread]: Resource report: {"command_name": "run", "command_success": true, "command_wall_clock_time": 103.107414, "process_in_blocks": "0", "process_kernel_time": 0.650862, "process_mem_max_rss": "222806016", "process_out_blocks": "0", "process_user_time": 2.542201}
+[0m11:02:23.134413 [debug] [MainThread]: Command `dbt run` succeeded at 11:02:23.134324 after 103.11 seconds
+[0m11:02:23.134837 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x104e87a90>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10c029910>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10bdbbe10>]}
+[0m11:02:23.135081 [debug] [MainThread]: Flushing usage events
+[0m11:02:23.582726 [debug] [MainThread]: An error was encountered while trying to flush usage events
