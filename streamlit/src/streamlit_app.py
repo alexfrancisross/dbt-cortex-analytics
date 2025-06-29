@@ -36,8 +36,10 @@ def initialize_session_state():
     
     # Initialize filters
     if 'filters' not in st.session_state:
-        default_end = datetime.now()
-        default_start = default_end - timedelta(days=90)
+        # Use the actual data range available in the database
+        # Data available from 2024-10-02 to 2025-03-30
+        default_start = datetime(2024, 10, 2)
+        default_end = datetime(2025, 3, 30)
         st.session_state.filters = {
             'start_date': default_start.strftime('%Y-%m-%d'),
             'end_date': default_end.strftime('%Y-%m-%d'),
@@ -97,6 +99,7 @@ with st.sidebar:
         base64.b64encode(open("assets/snowflake-logo.png", "rb").read()).decode(),
         base64.b64encode(open("assets/dbt-labs-signature_tm_light.svg" if st.session_state.theme['dark_mode'] else "assets/dbt-labs-logo.svg", "rb").read()).decode()
     ), unsafe_allow_html=True)
+
 
 # Add spacing before tabs
 st.markdown('<div style="margin: var(--space-md) 0;"></div>', unsafe_allow_html=True)

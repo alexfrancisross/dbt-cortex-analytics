@@ -39,6 +39,11 @@ def read_sql_file(file_path: str) -> str:
     with open(full_path, "r") as f:
         return f.read()
 
+def safe_lower_columns(df):
+    """Safely convert DataFrame column names to lowercase."""
+    df.columns = [str(col).lower() for col in df.columns]
+    return df
+
 @st.cache_data(ttl=300)
 def load_ticket_volume_data(filters: dict) -> pd.DataFrame:
     """Load and cache ticket volume data.
@@ -54,7 +59,7 @@ def load_ticket_volume_data(filters: dict) -> pd.DataFrame:
                       {"start_date": filters["start_date"], 
                        "end_date": filters["end_date"]})
     df = pd.DataFrame(results)
-    df.columns = df.columns.str.lower()
+    df = safe_lower_columns(df)
     
     if st.session_state.get('debug_mode', False):
         display_debug_info(
@@ -81,7 +86,7 @@ def load_priority_data(filters: dict) -> pd.DataFrame:
                       {"start_date": filters["start_date"],
                        "end_date": filters["end_date"]})
     df = pd.DataFrame(results)
-    df.columns = df.columns.str.lower()
+    df = safe_lower_columns(df)
     
     if st.session_state.get('debug_mode', False):
         display_debug_info(
@@ -108,7 +113,7 @@ def load_category_data(filters: dict) -> pd.DataFrame:
                       {"start_date": filters["start_date"],
                        "end_date": filters["end_date"]})
     df = pd.DataFrame(results)
-    df.columns = df.columns.str.lower()
+    df = safe_lower_columns(df)
     
     if st.session_state.get('debug_mode', False):
         display_debug_info(
@@ -135,7 +140,7 @@ def load_tickets_per_customer_data(filters: dict) -> pd.DataFrame:
                       {"start_date": filters["start_date"],
                        "end_date": filters["end_date"]})
     df = pd.DataFrame(results)
-    df.columns = df.columns.str.lower()
+    df = safe_lower_columns(df)
     
     if st.session_state.get('debug_mode', False):
         display_debug_info(
@@ -162,7 +167,7 @@ def load_first_response_data(filters: dict) -> pd.DataFrame:
                       {"start_date": filters["start_date"],
                        "end_date": filters["end_date"]})
     df = pd.DataFrame(results)
-    df.columns = df.columns.str.lower()
+    df = safe_lower_columns(df)
     
     if st.session_state.get('debug_mode', False):
         display_debug_info(
@@ -189,7 +194,7 @@ def load_resolution_rate_data(filters: dict) -> pd.DataFrame:
                       {"start_date": filters["start_date"],
                        "end_date": filters["end_date"]})
     df = pd.DataFrame(results)
-    df.columns = df.columns.str.lower()
+    df = safe_lower_columns(df)
     
     if st.session_state.get('debug_mode', False):
         display_debug_info(
@@ -216,7 +221,7 @@ def load_customer_effort_data(filters: dict) -> pd.DataFrame:
                       {"start_date": filters["start_date"],
                        "end_date": filters["end_date"]})
     df = pd.DataFrame(results)
-    df.columns = df.columns.str.lower()
+    df = safe_lower_columns(df)
     
     if st.session_state.get('debug_mode', False):
         display_debug_info(
@@ -243,7 +248,7 @@ def load_channel_effectiveness_data(filters: dict) -> pd.DataFrame:
                       {"start_date": filters["start_date"],
                        "end_date": filters["end_date"]})
     df = pd.DataFrame(results)
-    df.columns = df.columns.str.lower()
+    df = safe_lower_columns(df)
     
     if st.session_state.get('debug_mode', False):
         display_debug_info(
@@ -395,25 +400,44 @@ def render_support_ops_dashboard(filters: dict, debug_mode: bool = False) -> Non
     
     # Key Metrics Section
     try:
-        # Calculate KPIs
-        critical_pct = (priority_data[priority_data["priority"] == "Critical"]["ticket_count"].sum() / 
-                      priority_data["ticket_count"].sum() * 100)
+        # Calculate KPIs - handle empty DataFrames
+        if priority_data.empty:
+            critical_pct = 0
+        else:
+            critical_pct = (priority_data[priority_data["priority"] == "Critical"]["ticket_count"].sum() / 
+                          priority_data["ticket_count"].sum() * 100)
         
         # Calculate average first response time in minutes
-        avg_response_time = first_response_data["avg_response_time_minutes"].mean()
-        response_trend = get_smoothed_trend_data(first_response_data, "avg_response_time_minutes")
+        if first_response_data.empty:
+            avg_response_time = 0
+            response_trend = None
+        else:
+            avg_response_time = first_response_data["avg_response_time_minutes"].mean()
+            response_trend = get_smoothed_trend_data(first_response_data, "avg_response_time_minutes")
         
         # Calculate resolution rate
-        resolution_rate = resolution_rate_data["resolution_rate"].mean()
-        resolution_trend = get_smoothed_trend_data(resolution_rate_data, "resolution_rate")
+        if resolution_rate_data.empty:
+            resolution_rate = 0
+            resolution_trend = None
+        else:
+            resolution_rate = resolution_rate_data["resolution_rate"].mean()
+            resolution_trend = get_smoothed_trend_data(resolution_rate_data, "resolution_rate")
         
         # Calculate customer effort score
-        effort_score = customer_effort_data["customer_effort_score"].mean()
-        effort_trend = get_smoothed_trend_data(customer_effort_data, "customer_effort_score")
+        if customer_effort_data.empty:
+            effort_score = 0
+            effort_trend = None
+        else:
+            effort_score = customer_effort_data["customer_effort_score"].mean()
+            effort_trend = get_smoothed_trend_data(customer_effort_data, "customer_effort_score")
         
         # Calculate channel effectiveness
-        channel_effectiveness = channel_effectiveness_data["channel_effectiveness_score"].mean()
-        effectiveness_trend = get_smoothed_trend_data(channel_effectiveness_data, "channel_effectiveness_score")
+        if channel_effectiveness_data.empty:
+            channel_effectiveness = 0
+            effectiveness_trend = None
+        else:
+            channel_effectiveness = channel_effectiveness_data["channel_effectiveness_score"].mean()
+            effectiveness_trend = get_smoothed_trend_data(channel_effectiveness_data, "channel_effectiveness_score")
         
         # Convert average response time to hours and minutes for display
         if pd.isna(avg_response_time):
@@ -503,8 +527,21 @@ def render_support_ops_dashboard(filters: dict, debug_mode: bool = False) -> Non
         
     except KeyError as e:
         st.error(f"Error calculating KPIs: Missing column {str(e)}")
-        if debug_mode:
-            st.write("Available columns:", ticket_volume_data.columns.tolist())
+        if st.session_state.get('debug_mode', False):
+            st.write("Debug: DataFrame info:")
+            st.write("Ticket volume data columns:", ticket_volume_data.columns.tolist() if not ticket_volume_data.empty else "Empty DataFrame")
+            st.write("Priority data columns:", priority_data.columns.tolist() if not priority_data.empty else "Empty DataFrame")
+            st.write("First response data columns:", first_response_data.columns.tolist() if not first_response_data.empty else "Empty DataFrame")
+            st.write("Resolution rate data columns:", resolution_rate_data.columns.tolist() if not resolution_rate_data.empty else "Empty DataFrame")
+            st.write("Customer effort data columns:", customer_effort_data.columns.tolist() if not customer_effort_data.empty else "Empty DataFrame")
+            st.write("Channel effectiveness data columns:", channel_effectiveness_data.columns.tolist() if not channel_effectiveness_data.empty else "Empty DataFrame")
+        return
+    except Exception as e:
+        st.error(f"Error calculating KPIs: {str(e)}")
+        if st.session_state.get('debug_mode', False):
+            st.write("Debug: DataFrame shapes:")
+            st.write("Priority data shape:", priority_data.shape)
+            st.write("Priority data head:", priority_data.head() if not priority_data.empty else "Empty DataFrame")
         return
     
     # Ticket Volume Trend Section

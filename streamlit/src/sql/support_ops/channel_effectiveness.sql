@@ -10,7 +10,7 @@ WITH channel_metrics AS (
             WHEN t.ticket_status = 'Resolved' THEN 
                 DATEDIFF('hour', t.ticket_date, 
                     DATEADD('hour', 
-                        CASE t.priority_level
+                        CASE REPLACE(t.priority_level::TEXT, '"', '')
                             WHEN 'Critical' THEN 4
                             WHEN 'High' THEN 24
                             WHEN 'Medium' THEN 72

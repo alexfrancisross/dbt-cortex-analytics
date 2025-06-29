@@ -118,12 +118,12 @@ def render_sentiment_experience(filters: Dict[str, Any], debug_mode: bool = Fals
         return
     
     # Convert column names to lowercase
-    sentiment_time_df.columns = sentiment_time_df.columns.str.lower()
-    sentiment_dist_df.columns = sentiment_dist_df.columns.str.lower()
-    sentiment_by_persona_df.columns = sentiment_by_persona_df.columns.str.lower()
-    volatility_trend_df.columns = volatility_trend_df.columns.str.lower()
-    channel_alignment_df.columns = channel_alignment_df.columns.str.lower()
-    sentiment_recovery_df.columns = sentiment_recovery_df.columns.str.lower()
+    sentiment_time_df.columns = [str(col).lower() for col in sentiment_time_df.columns]
+    sentiment_dist_df.columns = [str(col).lower() for col in sentiment_dist_df.columns]
+    sentiment_by_persona_df.columns = [str(col).lower() for col in sentiment_by_persona_df.columns]
+    volatility_trend_df.columns = [str(col).lower() for col in volatility_trend_df.columns]
+    channel_alignment_df.columns = [str(col).lower() for col in channel_alignment_df.columns]
+    sentiment_recovery_df.columns = [str(col).lower() for col in sentiment_recovery_df.columns]
     
     if debug_mode:
         st.write("Sentiment Time DF Columns:", sentiment_time_df.columns.tolist())

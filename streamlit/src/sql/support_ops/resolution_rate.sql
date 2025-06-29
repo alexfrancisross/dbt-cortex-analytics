@@ -12,7 +12,7 @@ WITH resolution_metrics AS (
                     -- Using expected_resolution_timeframe as proxy for resolution date
                     -- In a real system, you'd have a resolution_date column
                     DATEADD('hour', 
-                        CASE priority_level
+                        CASE REPLACE(priority_level::TEXT, '"', '')
                             WHEN 'Critical' THEN 4   -- 4 hours for Critical
                             WHEN 'High' THEN 24      -- 24 hours for High
                             WHEN 'Medium' THEN 72    -- 72 hours for Medium

@@ -8,7 +8,7 @@ WITH ticket_response_times AS (
                     -- Using expected_resolution_timeframe as proxy for first response
                     -- In a real system, you'd have a first_response_date column
                     DATEADD('minute', 
-                        CASE priority_level
+                        CASE REPLACE(priority_level::TEXT, '"', '')
                             WHEN 'Critical' THEN 30   -- 30 min response time for Critical
                             WHEN 'High' THEN 120      -- 2 hours for High
                             WHEN 'Medium' THEN 480    -- 8 hours for Medium

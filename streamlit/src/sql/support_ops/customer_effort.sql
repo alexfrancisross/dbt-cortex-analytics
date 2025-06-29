@@ -4,7 +4,7 @@ WITH effort_metrics AS (
         -- Calculate effort score (0-100 scale) based on multiple factors
         AVG(
             -- Priority level impact (40% weight)
-            CASE priority_level
+            CASE REPLACE(priority_level::TEXT, '"', '')
                 WHEN 'Critical' THEN 100
                 WHEN 'High' THEN 75
                 WHEN 'Medium' THEN 50
@@ -19,7 +19,7 @@ WITH effort_metrics AS (
                     LEAST(100, 
                         100 - DATEDIFF('hour', ticket_date, 
                             DATEADD('hour', 
-                                CASE priority_level
+                                CASE REPLACE(priority_level::TEXT, '"', '')
                                     WHEN 'Critical' THEN 4
                                     WHEN 'High' THEN 24
                                     WHEN 'Medium' THEN 72

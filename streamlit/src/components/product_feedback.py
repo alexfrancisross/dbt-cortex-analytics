@@ -80,7 +80,7 @@ def load_rating_trend():
     query = "product_feedback/rating_trend.sql"
     results = run_query(query)
     df = pd.DataFrame(results)
-    df.columns = df.columns.str.lower()
+    df.columns = [str(col).lower() for col in df.columns]
     return df
 
 @st.cache_data(ttl=300)
@@ -88,7 +88,7 @@ def load_rating_distribution():
     query = "product_feedback/rating_distribution.sql"
     results = run_query(query)
     df = pd.DataFrame(results)
-    df.columns = df.columns.str.lower()
+    df.columns = [str(col).lower() for col in df.columns]
     return df
 
 @st.cache_data(ttl=300)
@@ -96,7 +96,7 @@ def load_sentiment_by_language():
     query = "product_feedback/sentiment_by_language.sql"
     results = run_query(query)
     df = pd.DataFrame(results)
-    df.columns = df.columns.str.lower()
+    df.columns = [str(col).lower() for col in df.columns]
     return df
 
 @st.cache_data(ttl=300)
@@ -104,7 +104,7 @@ def load_recent_reviews():
     query = "product_feedback/recent_reviews.sql"
     results = run_query(query)
     df = pd.DataFrame(results)
-    df.columns = df.columns.str.lower()
+    df.columns = [str(col).lower() for col in df.columns]
     return df
 
 def render_product_feedback(filters, debug_mode=False):

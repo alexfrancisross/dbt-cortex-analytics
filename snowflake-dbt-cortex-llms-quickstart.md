@@ -1,4 +1,4 @@
-# Customer Intelligence with Snowflake Cortex AI, dbt, and Streamlit
+#Customer Intelligence with Snowflake Cortex AI, dbt, and Streamlit
 <!-- ------------------------ -->
 ## Overview 
 Duration: 70
@@ -123,12 +123,14 @@ Get the project files using one of these methods:
 
 **Option 1: Clone the Repository (Recommended)**
 ```bash
-git clone https://github.com/alexfrancisross/dbt-cortex-analytics.git
+git clone https://github.com/Snowflake-Labs/dbt_cortex_analytics.git
+OR 
+https://github.com/alexfrancisross/dbt-cortex-analytics
 cd dbt_cortex_analytics
 ```
 
 **Option 2: Download ZIP File**
-1. Go to https://github.com/alexfrancisross/dbt-cortex-analytics
+1. Go to https://github.com/Snowflake-Labs/dbt_cortex_analytics OR https://github.com/alexfrancisross/dbt-cortex-analytics
 2. Click the green "Code" button
 3. Select "Download ZIP"
 4. Extract the ZIP file and navigate to the extracted folder
@@ -212,7 +214,7 @@ Once in dbt Cloud:
 2. **Choose Connection**: Select the Snowflake connection that was automatically created
 3. **Configure Project**: 
    - Project name: `Customer Intelligence Hub`
-   - Repository: Import from `https://github.com/alexfrancisross/dbt-cortex-analytics.git`
+   - Repository: Import from `https://github.com/Snowflake-Labs/dbt_cortex_analytics.git` OR `https://github.com/alexfrancisross/dbt-cortex-analytics`
 
 ![dbt Cloud Project Setup](img/dbt-cloud-project-setup.png)
 
@@ -683,7 +685,7 @@ Congratulations! You've built a comprehensive Customer Intelligence Hub powered 
 
 ### Learning Resources
 
-- [Snowflake Cortex AI Documentation](https://docs.snowflake.com/en/user-guide/snowflake-cortex/aisql)
+- [Snowflake Cortex AI Documentation](https://docs.snowflake.com/en/user-guide/cortex-llm)
 - [dbt Best Practices Guide](https://docs.getdbt.com/guides/best-practices)
 - [Streamlit in Snowflake Documentation](https://docs.snowflake.com/en/developer-guide/streamlit/about-streamlit)
 - [Advanced Analytics with Snowpark](https://docs.snowflake.com/en/developer-guide/snowpark/index)

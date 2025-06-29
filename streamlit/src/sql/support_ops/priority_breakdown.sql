@@ -1,6 +1,6 @@
 SELECT
     DATE(ticket_date) as date,
-    REPLACE(priority_level, '"', '') as priority,
+    REPLACE(priority_level::TEXT, '"', '') as priority,
     ticket_category as category,
     COUNT(*) as ticket_count,
     CAST(COUNT(*) * 100.0 / SUM(COUNT(*)) OVER (PARTITION BY DATE(ticket_date)) as FLOAT) as percentage
